@@ -1,0 +1,20 @@
+import Pkg
+
+Pkg.add(Pkg.PackageSpec(url="https://github.com/000Justin000/IsingLite.jl.git", rev="jj585"))
+Pkg.add(Pkg.PackageSpec(url="https://github.com/000Justin000/GraphSAGE.git", rev="master"))
+Pkg.add(Pkg.PackageSpec(name="Flux", version="0.9.0"))
+
+Pkg.add("MultivariateStats")
+Pkg.add("IterativeSolvers")
+Pkg.add("Distributions")
+Pkg.add("LightGraphs")
+Pkg.add("DataFrames")
+Pkg.add("StatsBase")
+Pkg.add("MLBase")
+Pkg.add("PyCall")
+Pkg.add("Arpack")
+Pkg.add("Plots")
+Pkg.add("JSON")
+Pkg.add("CSV")
+Pkg.add("MAT")
+Pkg.add("Juno")
