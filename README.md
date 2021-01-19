@@ -21,19 +21,19 @@ Our code implement the three algorithms outlined above, as well as some baseline
 - **feats:** an array of feature vectors
 - **labels:** an array of real-valued outcomes
 
-All prediction algorithms considered in our paper are implement as one single function [run_dataset](predict.jl#L18) with different options. Each algorithm can be decomposed into three components: 1) feature pre-processing, 2) inductive prediction, 3) residual propagation. 
+All prediction algorithms considered in our paper are implement as one single function [run_dataset](predict.jl#L18) with different options. Each algorithm can be decomposed into three steps: 1) feature pre-processing, 2) inductive prediction, 3) residual propagation. The options corresponding to each algorithm can be summarized as follows:
 
-| <td colspan=2 style="text-align:center">**step 1** <td colspan=2 style="text-align:center">**step 2** <td colspan=3 style="text-align:center">**step 3**
+| <td colspan=2 align=center>**step 1** <td colspan=2 align=center>**step 2** <td colspan=2 align=center>**step 3**
 |-
-|**Options** <td>feature_smoothing <td>α <td>predictor
-|LP            |   |   |   |
-|LR       |   |   |   |
-|LGC      |   |   |   |
-|SGC      |   |   |   |
-|GCN      |   |   |   |
-|LGC/RP   |   |   |   |
-|SGC/RP   |   |   |   |
-|GCN/RP   |   |   |   |
+|**Options** <td>**feature_smoothing** <td>**α** <td>**predictor** <td>**σ**    <td>**residual_propagation** <td>**α**
+|LP          <td>false                 <td>      <td>mean          <td>         <td>true                     <td>[0,1]
+|LR          <td>false                 <td>      <td>mlp           <td>identity <td>false                    <td>
+|LGC         <td>true                  <td>[0,1] <td>mlp           <td>identity <td>false                    <td>
+|SGC         <td>false                 <td>      <td>gcn           <td>identity <td>false                    <td>
+|GCN         <td>false                 <td>      <td>gcn           <td>relu     <td>false                    <td>
+|LGC/RP      <td>true                  <td>[0,1] <td>mlp           <td>identity <td>true                     <td>[0,1]
+|SGC/RP      <td>false                 <td>      <td>gcn           <td>identity <td>true                     <td>[0,1]
+|GCN/RP      <td>false                 <td>      <td>gcn           <td>relu     <td>true                     <td>[0,1]
 
 
 LP-GNN algorithm requires minimal implementation overhead on top of standard GNN. The following is code snippet from [example_lpgnn.jl](examples/example_lpgnn.jl#L18) that predicts county-level election outcomes with demographical features.
