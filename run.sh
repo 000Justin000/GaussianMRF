@@ -1,14 +1,4 @@
-# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+0.0_1_5");'                                                | julia >& results/coeff_synthetic_large_+0.0_1               &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+1.0_1_5");'                                                | julia >& results/coeff_synthetic_large_+1.0_1               &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+2.0_1_5");'                                                | julia >& results/coeff_synthetic_large_+2.0_1               &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+0.0_2_5");'                                                | julia >& results/coeff_synthetic_large_+0.0_2               &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+1.0_2_5");'                                                | julia >& results/coeff_synthetic_large_+1.0_2               &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+2.0_2_5");'                                                | julia >& results/coeff_synthetic_large_+2.0_2               &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("ward_2012_election");'                                                      | julia >& results/coeff_ward_2012                            &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("ward_2016_election");'                                                      | julia >& results/coeff_ward_2016                            &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("county_facebook_2012_election");'                                           | julia >& results/coeff_county_facebook_2012                 &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("county_facebook_2016_election");'                                           | julia >& results/coeff_county_facebook_2016                 &
-# echo 'include("fit_gmrf.jl"); fit_gmrf("climate_2008_pm2.5");'                                                      | julia >& results/coeff_climate_2008                         &
+# transductive learning experiments
 
 # echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("large", 5, [1], +0.0, 1, true);'                        | julia >& results/transductive_synthetic_large_+0.0_1_1      &
 # echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("large", 5, [2], +0.0, 1, true);'                        | julia >& results/transductive_synthetic_large_+0.0_1_2      &
@@ -44,6 +34,10 @@
 
 # echo 'include("experiments/transductive/transductive_twitch.jl"); run_twitch(false);'                                                       | julia >& results/transductive_twitch_PTBR_true_4            &
 
+
+
+# inductive learning experiments
+
 # echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "large", [1], 0.0);'                                  | julia >& results/inductive_synthetic_large_+0.0_2_1_1       &
 # echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "large", [2], 0.0);'                                  | julia >& results/inductive_synthetic_large_+0.0_2_1_2       &
 # echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "large", [3], 0.0);'                                  | julia >& results/inductive_synthetic_large_+0.0_2_1_3       &
@@ -66,3 +60,19 @@
 # echo 'include("experiments/inductive/inductive_county_facebook.jl"); run_county_facebook(2012, 2016, "education");'                      | julia >& results/inductive_county_facebook_2012_2016_education       &
 # echo 'include("experiments/inductive/inductive_county_facebook.jl"); run_county_facebook(2012, 2016, "unemployment");'                   | julia >& results/inductive_county_facebook_2012_2016_unemployment    &
 # echo 'include("experiments/inductive/inductive_county_facebook.jl"); run_county_facebook(2012, 2016, "election");'                       | julia >& results/inductive_county_facebook_2012_2016_election        &
+
+
+
+# fitting a graph to the Gaussian MRF
+
+# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+0.0_1_5");'                                                | julia >& results/coeff_synthetic_large_+0.0_1               &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+1.0_1_5");'                                                | julia >& results/coeff_synthetic_large_+1.0_1               &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+2.0_1_5");'                                                | julia >& results/coeff_synthetic_large_+2.0_1               &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+0.0_2_5");'                                                | julia >& results/coeff_synthetic_large_+0.0_2               &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+1.0_2_5");'                                                | julia >& results/coeff_synthetic_large_+1.0_2               &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("synthetic_large_+2.0_2_5");'                                                | julia >& results/coeff_synthetic_large_+2.0_2               &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("ward_2012_election");'                                                      | julia >& results/coeff_ward_2012                            &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("ward_2016_election");'                                                      | julia >& results/coeff_ward_2016                            &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("county_facebook_2012_election");'                                           | julia >& results/coeff_county_facebook_2012                 &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("county_facebook_2016_election");'                                           | julia >& results/coeff_county_facebook_2016                 &
+# echo 'include("fit_gmrf.jl"); fit_gmrf("climate_2008_pm2.5");'                                                      | julia >& results/coeff_climate_2008                         &
