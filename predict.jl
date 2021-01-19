@@ -235,11 +235,11 @@ function run_transductive(G, labels, feats; compute_VI=nothing, ξ=nothing, lidx
     #-----------------------------------------------------------------------------------
     p = length(feats[1]) + length(labels[1]);
     #-----------------------------------------------------------------------------------
-    n_step = 500;
-    cb_skip = 100;
+    n_step = 50;
+    cb_skip = 10;
     cv_fold = 5;
     #-----------------------------------------------------------------------------------
-    ntrials = 10;
+    ntrials = 3;
     #-----------------------------------------------------------------------------------
     ss = collect(cb_skip:cb_skip:n_step)
     Ks = [1, 2, 3];
@@ -247,7 +247,7 @@ function run_transductive(G, labels, feats; compute_VI=nothing, ξ=nothing, lidx
     #-----------------------------------------------------------------------------------
 
     #--------------------------------
-    for split_ratio in 0.10:0.10:0.60
+    for split_ratio in 0.10:0.50:0.60
     #--------------------------------
         if compute_VI
         vi_ll    = zeros(ntrials);
@@ -424,11 +424,11 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
     compute_VI: whether to compute the mutual information between the labels and the predictors
     """
     #-----------------------------------------------------------------------------------
-    n_step = 500;
-    cb_skip = 100;
+    n_step = 50;
+    cb_skip = 10;
     cv_fold = 5;
     #-----------------------------------------------------------------------------------
-    ntrials = 10;
+    ntrials = 3;
     #-----------------------------------------------------------------------------------
     ss = collect(cb_skip:cb_skip:n_step)
     Ks = [1, 2, 3];
