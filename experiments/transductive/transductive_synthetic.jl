@@ -1,5 +1,5 @@
-include("fit_gmrf.jl");
-include("predict.jl");
+include("../../fit_gmrf.jl");
+include("../../predict.jl");
 
 function run_synthetic(graph_size="medium", p=5, lidx=[5], shift=0.0, sid=1, compute_VI=false)
     """

@@ -1,5 +1,5 @@
-include("fit_gmrf.jl");
-include("predict.jl");
+include("../../fit_gmrf.jl");
+include("../../predict.jl");
 
 function run_county_facebook(year_tr, year_te, lb="income")
     """

@@ -1,6 +1,6 @@
-include("fit_gmrf.jl");
-include("predict.jl");
-include("extras.jl");
+include("../../fit_gmrf.jl");
+include("../../predict.jl");
+include("../../extras.jl");
 
 #-----------------------------------------------------------------------------------
 function read_county_facebook_extras(year, prediction)

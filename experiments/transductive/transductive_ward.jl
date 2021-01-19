@@ -1,5 +1,5 @@
-include("fit_gmrf.jl");
-include("predict.jl");
+include("../../fit_gmrf.jl");
+include("../../predict.jl");
 
 function run_ward(year=2016, lb="edu", compute_VI=false)
     """

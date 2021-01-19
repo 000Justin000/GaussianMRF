@@ -38,23 +38,6 @@ function explicit_smoothing(FT, N; α=0.5, K=256)
     return FS;
 end
 
-function implicit_smoothing(FT, N; α=0.5, K=256)
-    """
-    Args:
-        FT: d×n dimensional feature matrix
-         N: n×n dimensional normalized Laplacian matrix
-         α: mixing parameter
-         K: number of cg steps
-
-    Returns:
-        FS: smoothed feature matrix, FS = (I + α/(1-α)*N)^{-1} FT
-    """
-    M = I + (α/(1-α))*N;
-    FS, _ = mBCG(Y->M*Y, collect(FT'); k=K);
-
-    return collect(FS');
-end
-
 function interpolate(L, rL; Γ)
     """
     Args:
@@ -129,7 +112,7 @@ function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predicto
     X = normalized_laplacian(G);
 
     # perform feature smoothing with fixed mixing parameter α
-    FF = feature_smoothing ? implicit_smoothing(FT, X; α=α) : FT;
+    FF = feature_smoothing ? explicit_smoothing(FT, X; α=α) : FT;
 
     # number of features, number of classes for labels
     dim_f = size(FF,1);

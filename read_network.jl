@@ -41,11 +41,11 @@ function read_synthetic(graph_size="medium", shift=0.0, sample_id=1, prediction_
 end
 
 function read_county_facebook(year, prediction)
-    VOT = CSV.read("datasets/county/election.csv", DataFrame);
-    ICM = CSV.read("datasets/county/income.csv", DataFrame);
-    POP = CSV.read("datasets/county/population.csv", DataFrame);
-    EDU = CSV.read("datasets/county/education.csv", DataFrame);
-    UEP = CSV.read("datasets/county/unemployment.csv", DataFrame);
+    VOT = CSV.read("datasets/county_facebook/election.csv", DataFrame);
+    ICM = CSV.read("datasets/county_facebook/income.csv", DataFrame);
+    POP = CSV.read("datasets/county_facebook/population.csv", DataFrame);
+    EDU = CSV.read("datasets/county_facebook/education.csv", DataFrame);
+    UEP = CSV.read("datasets/county_facebook/unemployment.csv", DataFrame);
 
     vot = DataFrames.DataFrame((:FIPS=>VOT[:,:fips_code], :DEM=>VOT[:,Symbol("dem_", year)], :GOP=>VOT[:,Symbol("gop_", year)]));
     icm = DataFrames.DataFrame((:FIPS=>ICM[:,:FIPS], :MedianIncome=>ICM[:,Symbol("MedianIncome", min(max(2011,year), 2018))]));
@@ -55,7 +55,7 @@ function read_county_facebook(year, prediction)
     edu = DataFrames.DataFrame((:FIPS=>EDU[:,Symbol("FIPS")], :BachelorRate=>EDU[:,Symbol("BachelorRate", year)]));
     uep = DataFrames.DataFrame((:FIPS=>UEP[:,:FIPS], :UnemploymentRate=>UEP[:,Symbol("Unemployment_rate_", min(max(2007,year), 2018))]));
 
-    df = CSV.read("datasets/more-graphs/facebook-counties/county-info.csv", DataFrame; header=1, types=[Int,Int,Float64,Float64,Float64], strict=false, silencewarnings=true);
+    df = CSV.read("datasets/county_facebook/county-info.csv", DataFrame; header=1, types=[Int,Int,Float64,Float64,Float64], strict=false, silencewarnings=true);
     info = rename(df[completecases(df),:], [:FIPS, :id, :sh050m, :sh100m, :sh500m]);
     
     # change of FIPS code of Oglala Lakota County (FIPS 46102) to the old Shannon County (FIPS 46113)
@@ -68,7 +68,7 @@ function read_county_facebook(year, prediction)
 
     id2num = Dict{Int,Int}(id=>num for (num,id) in enumerate(dat[!,2]));
 
-    adj = Int.(Matrix(CSV.read("datasets/more-graphs/facebook-counties/top.csv", DataFrame)[!,1:2]));
+    adj = Int.(Matrix(CSV.read("datasets/county_facebook/top.csv", DataFrame)[!,1:2]));
     n = length(id2num);
 
     G = Graph(n);

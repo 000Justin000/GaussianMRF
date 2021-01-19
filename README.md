@@ -46,7 +46,7 @@ ll, uu = rand_split(nv(G), [0.3, 0.7]);
 
 # prediction routine
 run_dataset(G, feats, labels, ll, uu; 
-            feature_smoothing=true, α=0.95, predictor="mlp", σ=identity, residual_propagation=true)
+            feature_smoothing=true, α=0.80, predictor="mlp", σ=identity, residual_propagation=true)
 ```
 Please see [example.jl](examples/example.jl) for more details.
 

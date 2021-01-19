@@ -1,5 +1,5 @@
-include("read_network.jl");
-include("predict.jl");
+include("../../read_network.jl");
+include("../../predict.jl");
 
 G, _, labels, feats = read_network("bitcoin_transaction");
 

@@ -6,8 +6,6 @@ using LightGraphs;
 using LinearAlgebra;
 using SparseArrays;
 using MLBase;
-using CatViews;
-using Optim;
 import Flux: train!;
 
 eye(n) = diagm(0=>ones(n));
@@ -77,9 +75,6 @@ function R2(y_, y)
         coefficients of determination
     """
     @assert ((ndims(y_) == ndims(y) == 1) || (size(y_,1) == size(y,1) == 1)) "unexpected input size"
-
-    # println(sum((y_[:] .- y[:]).^2.0))
-    # println(sum((y[:] .- mean(y[:])).^2.0))
 
     return 1.0 - sum((y_[:] .- y[:]).^2.0) / sum((y[:] .- mean(y[:])).^2.0);
 end
