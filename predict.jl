@@ -13,43 +13,43 @@ include("utils.jl");
 include("kernels.jl");
 include("read_network.jl");
 
-function explicit_smoothing(FT, N; η=0.5, K=256)
+function explicit_smoothing(FT, N; α=0.5, K=256)
     """
     Args:
         FT: d×n dimensional feature matrix
          N: n×n dimensional normalized Laplacian matrix
-         η: mixing parameter
+         α: mixing parameter
          K: number of label propagation steps
 
     Returns:
-        FS: smoothed feature matrix, FS(K) = (1-η) ∑_{i=0}^{K-1} FT (η S)^{i} + FT (η S)^{K}
+        FS: smoothed feature matrix, FS(K) = (1-α) ∑_{i=0}^{K-1} FT (α S)^{i} + FT (α S)^{K}
     """
     S = I-N;
 
     FS = zeros(size(FT));
     for i in 0:K-1
-        # at this point, FT == FT0 (η S)^{i}
-        FS += (1-η) * FT;
-        FT *= (η*S);
-        # at this point, FT == FT0 (η S)^{i+1}
+        # at this point, FT == FT0 (α S)^{i}
+        FS += (1-α) * FT;
+        FT *= (α*S);
+        # at this point, FT == FT0 (α S)^{i+1}
     end
     FS += FT;
 
     return FS;
 end
 
-function implicit_smoothing(FT, N; η=0.5, K=256)
+function implicit_smoothing(FT, N; α=0.5, K=256)
     """
     Args:
         FT: d×n dimensional feature matrix
          N: n×n dimensional normalized Laplacian matrix
-         η: mixing parameter
+         α: mixing parameter
          K: number of cg steps
 
     Returns:
-        FS: smoothed feature matrix, FS = (I + η/(1-η)*N)^{-1} FT
+        FS: smoothed feature matrix, FS = (I + α/(1-α)*N)^{-1} FT
     """
-    M = I + (η/(1-η))*N;
+    M = I + (α/(1-α))*N;
     FS, _ = mBCG(Y->M*Y, collect(FT'); k=K);
 
     return collect(FS');
@@ -97,7 +97,7 @@ function estimate_residual(U, L; LBL, pL, Γ)
 end
 
 # learn and test accuracy
-function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predictor="zero", residual_propagation=false, η=0.5, K=2, σ=relu, n_step=500, cb_skip=100, seed_val=0, return_predictions=false, return_trace=false, return_predmap=false)
+function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predictor="zero", residual_propagation=false, α=0.5, K=2, σ=relu, n_step=500, cb_skip=100, seed_val=0, return_predictions=false, return_trace=false, return_predmap=false)
     """
     Args:
           G: an undirected graph instance from LightGraphs.jl
@@ -128,8 +128,8 @@ function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predicto
     # normalized adjacency matrix
     X = normalized_laplacian(G);
 
-    # perform feature smoothing with fixed mixing parameter η
-    FF = feature_smoothing ? implicit_smoothing(FT, X; η=η) : FT;
+    # perform feature smoothing with fixed mixing parameter α
+    FF = feature_smoothing ? implicit_smoothing(FT, X; α=α) : FT;
 
     # number of features, number of classes for labels
     dim_f = size(FF,1);
@@ -187,7 +187,7 @@ function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predicto
 
     # label/residual propagation matrix
     # if Γ is the identity matrix, then it is ``turned off''
-    Γ = residual_propagation ? I + (η/(1-η))*X : speye(nv(G));
+    Γ = residual_propagation ? I + (α/(1-α))*X : speye(nv(G));
 
     # the inductive predction, plus the residual propagation corrections
     function predmap_with_rp(G, FF, U, L, LBL, Γ)
@@ -243,7 +243,7 @@ function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predicto
     return outputs;
 end
 
-function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx=nothing, fidx=nothing)
+function run_transductive(G, labels, feats; compute_VI=nothing, ξ=nothing, lidx=nothing, fidx=nothing)
     """
     Args:
          shift: added to random initialization of correlation parameters
@@ -260,7 +260,7 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
     #-----------------------------------------------------------------------------------
     ss = collect(cb_skip:cb_skip:n_step)
     Ks = [1, 2, 3];
-    ηs = [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.85, 0.90, 0.95, 0.99, 0.999];
+    αs = [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.85, 0.90, 0.95, 0.99, 0.999];
     #-----------------------------------------------------------------------------------
 
     #--------------------------------
@@ -286,11 +286,11 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
         Kx_sgc   = zeros(Int, ntrials);
         Kx_gcn   = zeros(Int, ntrials);
         #-------------------------
-        ηx_lp    = zeros(ntrials);
-        ηx_lgc   = zeros(ntrials);
-        ηx_lgcrp = zeros(ntrials);
-        ηx_sgcrp = zeros(ntrials);
-        ηx_gcnrp = zeros(ntrials);
+        αx_lp    = zeros(ntrials);
+        αx_lgc   = zeros(ntrials);
+        αx_lgcrp = zeros(ntrials);
+        αx_sgcrp = zeros(ntrials);
+        αx_gcnrp = zeros(ntrials);
         #-------------------------
 
         #-----------------------------
@@ -301,7 +301,7 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
 
             #-------------------------
             if compute_VI
-            vi_ll[seed_val], vi_ff[seed_val], vi_fl[seed_val] = calculate_VI(G, p, α, lidx, fidx, dtr, dte);
+            vi_ll[seed_val], vi_ff[seed_val], vi_fl[seed_val] = calculate_VI(G, p, ξ, lidx, fidx, dtr, dte);
             end
             #-------------------------
 
@@ -348,11 +348,11 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
             #-------------------------
 
             #-------------------------
-            va_lp    = zeros(length(ηs));
-            va_lgc   = zeros(length(ss), length(ηs));
-            va_lgcrp = zeros(length(ss), length(ηs));
-            va_sgcrp = zeros(length(ηs));
-            va_gcnrp = zeros(length(ηs));
+            va_lp    = zeros(length(αs));
+            va_lgc   = zeros(length(ss), length(αs));
+            va_lgcrp = zeros(length(ss), length(αs));
+            va_sgcrp = zeros(length(αs));
+            va_gcnrp = zeros(length(αs));
             #-------------------------
             for dVA in dVAs
                 #-------------------------
@@ -362,12 +362,12 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
                 #-------------------------
                 # cross validation for LP, LGC, LGC/RP, SGC/RP, GCN/RP
                 #-------------------------
-                for (i,η) in enumerate(ηs)
-                va_lp[i]      += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="mean", residual_propagation=true,  η=η,                                                                   seed_val=seed_val, return_trace=false);
-                va_lgc[:,i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, η=η,                      σ=identity, n_step=n_step,  cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
-                va_lgcrp[:,i] += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  η=η,                      σ=identity, n_step=n_step,  cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
-                va_sgcrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=η, K=Kx_sgc[seed_val],  σ=identity, n_step=sx_sgc,  cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
-                va_gcnrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=η, K=Kx_gcn[seed_val],  σ=relu,     n_step=sx_gcn,  cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
+                for (i,α) in enumerate(αs)
+                va_lp[i]      += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="mean", residual_propagation=true,  α=α,                                                                   seed_val=seed_val, return_trace=false);
+                va_lgc[:,i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, α=α,                      σ=identity, n_step=n_step,  cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
+                va_lgcrp[:,i] += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  α=α,                      σ=identity, n_step=n_step,  cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
+                va_sgcrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=α, K=Kx_sgc[seed_val],  σ=identity, n_step=sx_sgc,  cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
+                va_gcnrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=α, K=Kx_gcn[seed_val],  σ=relu,     n_step=sx_gcn,  cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
                 end
                 #-------------------------
             end
@@ -375,11 +375,11 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
             sx_lgc   = ss[argmax(va_lgc  )[1]];
             sx_lgcrp = ss[argmax(va_lgcrp)[1]];
             #-------------------------
-            ηx_lp[seed_val]    = ηs[argmax(va_lp)];
-            ηx_lgc[seed_val]   = ηs[argmax(va_lgc  )[2]];
-            ηx_lgcrp[seed_val] = ηs[argmax(va_lgcrp)[2]];
-            ηx_sgcrp[seed_val] = ηs[argmax(va_sgcrp)];
-            ηx_gcnrp[seed_val] = ηs[argmax(va_gcnrp)];
+            αx_lp[seed_val]    = αs[argmax(va_lp)];
+            αx_lgc[seed_val]   = αs[argmax(va_lgc  )[2]];
+            αx_lgcrp[seed_val] = αs[argmax(va_lgcrp)[2]];
+            αx_sgcrp[seed_val] = αs[argmax(va_sgcrp)];
+            αx_gcnrp[seed_val] = αs[argmax(va_gcnrp)];
             #-------------------------
 
             #-------------------------
@@ -390,11 +390,11 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
             ac_sgc[seed_val]   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=false,                         K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val);
             ac_gcn[seed_val]   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=false,                         K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val);
             #-------------------------
-            ac_lp[seed_val]    = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="mean", residual_propagation=true,  η=ηx_lp[seed_val],                                                                        seed_val=seed_val);
-            ac_lgc[seed_val]   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, η=ηx_lgc[seed_val],                         σ=identity, n_step=sx_lgc,   cb_skip=cb_skip, seed_val=seed_val);
-            ac_lgcrp[seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  η=ηx_lgcrp[seed_val],                       σ=identity, n_step=sx_lgcrp, cb_skip=cb_skip, seed_val=seed_val);
-            ac_sgcrp[seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=ηx_sgcrp[seed_val],   K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val);
-            ac_gcnrp[seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=ηx_gcnrp[seed_val],   K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val);
+            ac_lp[seed_val]    = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="mean", residual_propagation=true,  α=αx_lp[seed_val],                                                                        seed_val=seed_val);
+            ac_lgc[seed_val]   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, α=αx_lgc[seed_val],                         σ=identity, n_step=sx_lgc,   cb_skip=cb_skip, seed_val=seed_val);
+            ac_lgcrp[seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  α=αx_lgcrp[seed_val],                       σ=identity, n_step=sx_lgcrp, cb_skip=cb_skip, seed_val=seed_val);
+            ac_sgcrp[seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=αx_sgcrp[seed_val],   K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val);
+            ac_gcnrp[seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=αx_gcnrp[seed_val],   K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val);
             #-------------------------
         end
 
@@ -421,11 +421,11 @@ function run_transductive(G, labels, feats; compute_VI=nothing, α=nothing, lidx
         @printf("%6.3f;      Kx_sgc; %s\n", split_ratio, array2str(Kx_sgc));
         @printf("%6.3f;      Kx_gcn; %s\n", split_ratio, array2str(Kx_gcn));
         #-----------------------------
-        @printf("%6.3f;       ηx_lp; %s\n", split_ratio, array2str(ηx_lp));
-        @printf("%6.3f;      ηx_lgc; %s\n", split_ratio, array2str(ηx_lgc));
-        @printf("%6.3f;    ηx_lgcrp; %s\n", split_ratio, array2str(ηx_lgcrp));
-        @printf("%6.3f;    ηx_sgcrp; %s\n", split_ratio, array2str(ηx_sgcrp));
-        @printf("%6.3f;    ηx_gcnrp; %s\n", split_ratio, array2str(ηx_gcnrp));
+        @printf("%6.3f;       αx_lp; %s\n", split_ratio, array2str(αx_lp));
+        @printf("%6.3f;      αx_lgc; %s\n", split_ratio, array2str(αx_lgc));
+        @printf("%6.3f;    αx_lgcrp; %s\n", split_ratio, array2str(αx_lgcrp));
+        @printf("%6.3f;    αx_sgcrp; %s\n", split_ratio, array2str(αx_sgcrp));
+        @printf("%6.3f;    αx_gcnrp; %s\n", split_ratio, array2str(αx_gcnrp));
         #-----------------------------
 
         #-----------------------------
@@ -449,7 +449,7 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
     #-----------------------------------------------------------------------------------
     ss = collect(cb_skip:cb_skip:n_step)
     Ks = [1, 2, 3];
-    ηs = [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.85, 0.90, 0.95, 0.99, 0.999];
+    αs = [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.85, 0.90, 0.95, 0.99, 0.999];
     #-----------------------------------------------------------------------------------
     nf = length(feats[1]);
     #-----------------------------------------------------------------------------------
@@ -469,11 +469,11 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
     Kx_sgc   = zeros(Int, ntrials);
     Kx_gcn   = zeros(Int, ntrials);
     #-------------------------
-    ηx_lp    = zeros(ntrials);
-    ηx_lgc   = zeros(ntrials);
-    ηx_lgcrp = zeros(ntrials);
-    ηx_sgcrp = zeros(ntrials);
-    ηx_gcnrp = zeros(ntrials);
+    αx_lp    = zeros(ntrials);
+    αx_lgc   = zeros(ntrials);
+    αx_lgcrp = zeros(ntrials);
+    αx_sgcrp = zeros(ntrials);
+    αx_gcnrp = zeros(ntrials);
     #-------------------------
     coeff_lr  = zeros(nf+1);
     coeff_sgc = zeros(nf+1);
@@ -545,11 +545,11 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
         #-------------------------
 
         #-------------------------
-        va_lp    = zeros(length(ηs));
-        va_lgc   = zeros(length(ss), length(ηs));
-        va_lgcrp = zeros(length(ss), length(ηs));
-        va_sgcrp = zeros(length(ηs));
-        va_gcnrp = zeros(length(ηs));
+        va_lp    = zeros(length(αs));
+        va_lgc   = zeros(length(ss), length(αs));
+        va_lgcrp = zeros(length(ss), length(αs));
+        va_sgcrp = zeros(length(αs));
+        va_gcnrp = zeros(length(αs));
         #-------------------------
         for dVA in dVAs
             #-------------------------
@@ -559,12 +559,12 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
             #-------------------------
             # cross validation for LP, LGC, LGC/RP, SGC/RP, GCN/RP
             #-------------------------
-            for (i,η) in enumerate(ηs)
-            va_lp[i]      += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="mean", residual_propagation=true,  η=η,                                                                 seed_val=seed_val, return_trace=false);
-            va_lgc[:,i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, η=η,                     σ=identity, n_step=n_step, cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
-            va_lgcrp[:,i] += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  η=η,                     σ=identity, n_step=n_step, cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
-            va_sgcrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=η, K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc, cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
-            va_gcnrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=η, K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn, cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
+            for (i,α) in enumerate(αs)
+            va_lp[i]      += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="mean", residual_propagation=true,  α=α,                                                                 seed_val=seed_val, return_trace=false);
+            va_lgc[:,i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, α=α,                     σ=identity, n_step=n_step, cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
+            va_lgcrp[:,i] += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  α=α,                     σ=identity, n_step=n_step, cb_skip=cb_skip, seed_val=seed_val, return_trace=true)[2];
+            va_sgcrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=α, K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc, cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
+            va_gcnrp[i]   += run_dataset(G, feats, labels, dTR, dVA, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=α, K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn, cb_skip=cb_skip, seed_val=seed_val, return_trace=false);
             end
             #-------------------------
         end
@@ -572,11 +572,11 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
         sx_lgc   = ss[argmax(va_lgc  )[1]];
         sx_lgcrp = ss[argmax(va_lgcrp)[1]];
         #-------------------------
-        ηx_lp[seed_val]    = ηs[argmax(va_lp)];
-        ηx_lgc[seed_val]   = ηs[argmax(va_lgc  )[2]];
-        ηx_lgcrp[seed_val] = ηs[argmax(va_lgcrp)[2]];
-        ηx_sgcrp[seed_val] = ηs[argmax(va_sgcrp)];
-        ηx_gcnrp[seed_val] = ηs[argmax(va_gcnrp)];
+        αx_lp[seed_val]    = αs[argmax(va_lp)];
+        αx_lgc[seed_val]   = αs[argmax(va_lgc  )[2]];
+        αx_lgcrp[seed_val] = αs[argmax(va_lgcrp)[2]];
+        αx_sgcrp[seed_val] = αs[argmax(va_sgcrp)];
+        αx_gcnrp[seed_val] = αs[argmax(va_gcnrp)];
         #-------------------------
 
         #-------------------------
@@ -587,11 +587,11 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
         ac_sgc[seed_val,1],   predmap_sgc   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=false,                         K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,     cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
         ac_gcn[seed_val,1],   predmap_gcn   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=false,                         K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,     cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
         #-------------------------
-        ac_lp[seed_val,1],    predmap_lp    = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="mean", residual_propagation=true,  η=ηx_lp[seed_val],                                                                        seed_val=seed_val, return_predmap=true);
-        ac_lgc[seed_val,1],   predmap_lgc   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, η=ηx_lgc[seed_val],                         σ=identity, n_step=sx_lgc,   cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
-        ac_lgcrp[seed_val,1], predmap_lgcrp = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  η=ηx_lgcrp[seed_val],                       σ=identity, n_step=sx_lgcrp, cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
-        ac_sgcrp[seed_val,1], predmap_sgcrp = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=ηx_sgcrp[seed_val],   K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
-        ac_gcnrp[seed_val,1], predmap_gcnrp = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  η=ηx_gcnrp[seed_val],   K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
+        ac_lp[seed_val,1],    predmap_lp    = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="mean", residual_propagation=true,  α=αx_lp[seed_val],                                                                        seed_val=seed_val, return_predmap=true);
+        ac_lgc[seed_val,1],   predmap_lgc   = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=false, α=αx_lgc[seed_val],                         σ=identity, n_step=sx_lgc,   cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
+        ac_lgcrp[seed_val,1], predmap_lgcrp = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=true,  predictor="mlp",  residual_propagation=true,  α=αx_lgcrp[seed_val],                       σ=identity, n_step=sx_lgcrp, cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
+        ac_sgcrp[seed_val,1], predmap_sgcrp = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=αx_sgcrp[seed_val],   K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
+        ac_gcnrp[seed_val,1], predmap_gcnrp = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="gcn",  residual_propagation=true,  α=αx_gcnrp[seed_val],   K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val, return_predmap=true);
         #-------------------------
 
         #-------------------------
@@ -602,11 +602,11 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
         ac_sgc[seed_val,2]   = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_sgc,   residual_propagation=false,                         K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val);
         ac_gcn[seed_val,2]   = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_gcn,   residual_propagation=false,                         K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val);
         #-------------------------
-        ac_lp[seed_val,2]    = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_lp,    residual_propagation=true,  η=ηx_lp[seed_val],                                                                        seed_val=seed_val);
-        ac_lgc[seed_val,2]   = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=true,  predictor=predmap_lgc,   residual_propagation=false, η=ηx_lgc[seed_val],                         σ=identity, n_step=sx_lgc,   cb_skip=cb_skip, seed_val=seed_val);
-        ac_lgcrp[seed_val,2] = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=true,  predictor=predmap_lgcrp, residual_propagation=true,  η=ηx_lgcrp[seed_val],                       σ=identity, n_step=sx_lgcrp, cb_skip=cb_skip, seed_val=seed_val);
-        ac_sgcrp[seed_val,2] = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_sgcrp, residual_propagation=true,  η=ηx_sgcrp[seed_val],   K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val);
-        ac_gcnrp[seed_val,2] = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_gcnrp, residual_propagation=true,  η=ηx_gcnrp[seed_val],   K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val);
+        ac_lp[seed_val,2]    = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_lp,    residual_propagation=true,  α=αx_lp[seed_val],                                                                        seed_val=seed_val);
+        ac_lgc[seed_val,2]   = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=true,  predictor=predmap_lgc,   residual_propagation=false, α=αx_lgc[seed_val],                         σ=identity, n_step=sx_lgc,   cb_skip=cb_skip, seed_val=seed_val);
+        ac_lgcrp[seed_val,2] = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=true,  predictor=predmap_lgcrp, residual_propagation=true,  α=αx_lgcrp[seed_val],                       σ=identity, n_step=sx_lgcrp, cb_skip=cb_skip, seed_val=seed_val);
+        ac_sgcrp[seed_val,2] = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_sgcrp, residual_propagation=true,  α=αx_sgcrp[seed_val],   K=Kx_sgc[seed_val], σ=identity, n_step=sx_sgc,   cb_skip=cb_skip, seed_val=seed_val);
+        ac_gcnrp[seed_val,2] = run_dataset(G_new, feats_new, labels_new, dtr, dte, feature_smoothing=false, predictor=predmap_gcnrp, residual_propagation=true,  α=αx_gcnrp[seed_val],   K=Kx_gcn[seed_val], σ=relu,     n_step=sx_gcn,   cb_skip=cb_skip, seed_val=seed_val);
         #-------------------------
 
         #-------------------------

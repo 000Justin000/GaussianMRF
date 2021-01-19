@@ -96,9 +96,9 @@ lb = ["unemployment", "election"];
 #-----------------------------------------------------------------------------------
 G, _, ff, fips, recover_funcs = read_county_facebook_extras(year, "election");
 #-----------------------------------------------------------------------------------
-ρ_string, α_string = split(readlines("results/coeff_county_facebook_" * string(year))[end], ';');
+ρ_string, ξ_string = split(readlines("results/coeff_county_facebook_" * string(year))[end], ';');
 ρ = parse.(Float64, split(match(r".*ρ_opt:(.+)", ρ_string)[1], ','));
-α = parse.(Float64, split(match(r".*α_opt:(.+)", α_string)[1], ','));
+ξ = parse.(Float64, split(match(r".*ξ_opt:(.+)", ξ_string)[1], ','));
 lb2idx = Dict("sh050m"=>1, "sh100m"=>2, "sh500m"=>3, "income"=>4, "migration"=>5, "birth"=>6, "death"=>7, "education"=>8, "unemployment"=>9, "election"=>10);
 p = size(ff,2);
 lidx = [lb2idx[lb_] for lb_ in lb];
@@ -106,7 +106,7 @@ fidx = setdiff(1:p, lidx);
 #-----------------------------------------------------------------------------------
 interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p]);
 A = get_adjacency_matrices(G, p; interaction_list=interaction_list);
-Γ = getΓ(α; A=A);
+Γ = getΓ(ξ; A=A);
 @assert isposdef(Γ);
 #-----------------------------------------------------------------------------------
 # the indices for features in fidx and vertices in V

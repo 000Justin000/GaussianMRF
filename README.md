@@ -23,9 +23,9 @@ Our code implement the three algorithms outlined above, as well as some baseline
 
 All prediction algorithms considered in our paper are implement as one single function [run_dataset](predict.jl#L18) with different options. Each algorithm can be decomposed into three components: 1) feature pre-processing, 2) inductive prediction, 3) residual propagation. 
 
-| **Algorithm** <td colspan=3>**step 1 options** <td colspan=3>**step 2 options** <td colspan=3>**step 3 options**|
+| <td colspan=2 style="text-align:center">**step 1** <td colspan=2 style="text-align:center">**step 2** <td colspan=3 style="text-align:center">**step 3**
 |-
-|**Options** <td colspan=1>feature_smoothing <td colspan=1>feature_smoothing |   |  
+|**Options** <td>feature_smoothing <td>α <td>predictor
 |LP            |   |   |   |
 |LR       |   |   |   |
 |LGC      |   |   |   |

@@ -87,24 +87,24 @@ end
 #-------------------------------------
 # model dependent part
 #-------------------------------------
-function getdiagΓ(α; A)
-    return sum(α_*collect(diag(A_)) for (α_,A_) in zip(α,A));
+function getdiagΓ(ξ; A)
+    return sum(ξ_*collect(diag(A_)) for (ξ_,A_) in zip(ξ,A));
 end
 
-function getΓ(α; A)
-    return sum(α_*A_ for (α_,A_) in zip(α,A));
+function getΓ(ξ; A)
+    return sum(ξ_*A_ for (ξ_,A_) in zip(ξ,A));
 end
 
-function get∂Γ∂α(α::Vector{Float64}; A)
+function get∂Γ∂ξ(ξ::Vector{Float64}; A)
     return A;
 end
 #-------------------------------------
 
-logdetΓ(α::TrackedVector; A, P, t, k) = track(logdetΓ, α; A=A, P=P, t=t, k=k);
-@grad function logdetΓ(α; A, P, t, k)
+logdetΓ(ξ::TrackedVector; A, P, t, k) = track(logdetΓ, ξ; A=A, P=P, t=t, k=k);
+@grad function logdetΓ(ξ; A, P, t, k)
     """
     Args:
-         α: model parameter vector
+         ξ: model parameter vector
          A: matrix vector
          P: index set
          t: # of trial vectors
@@ -114,15 +114,15 @@ logdetΓ(α::TrackedVector; A, P, t, k) = track(logdetΓ, α; A=A, P=P, t=t, k=k
          log determinant of the principle submatrix ΓPP
     """
 
-    (length(P) == 0) && return 0.0, Δ -> (zeros(length(α)), 0.0);
+    (length(P) == 0) && return 0.0, Δ -> (zeros(length(ξ)), 0.0);
 
-    α = data(α);
+    ξ = data(ξ);
 
     n = length(P);
     Z = randn(n,t);
 
-    Γ = getΓ(α; A=A);
-    ∂Γ∂α = get∂Γ∂α(α; A=A);
+    Γ = getΓ(ξ; A=A);
+    ∂Γ∂ξ = get∂Γ∂ξ(ξ; A=A);
 
     X, TT = mBCG(Y->Γ[P,P]*Y, Z; k=k);
 
@@ -134,9 +134,9 @@ logdetΓ(α::TrackedVector; A, P, t, k) = track(logdetΓ, α; A=A, P=P, t=t, k=k
     Ω = vv*n/t;
 
     trΓiM(M) = sum(X.*(M[P,P]*Z))/t;
-    ∂Ω∂α = map(trΓiM, ∂Γ∂α);
+    ∂Ω∂ξ = map(trΓiM, ∂Γ∂ξ);
 
-    return Ω, Δ -> tuple(Δ*∂Ω∂α);
+    return Ω, Δ -> tuple(Δ*∂Ω∂ξ);
 end
 
 function test_logdetΓ(n=100)
@@ -146,14 +146,14 @@ function test_logdetΓ(n=100)
 
     #------------------------
     p = param(rand(2));
-    getα() = p[:];
+    getξ() = p[:];
     #------------------------
 
     #------------------------
     # true value
     #------------------------
     Γ = Array{eltype(p)}(undef, n, n);
-    Γ .= getΓ(getα(); A=A);
+    Γ .= getΓ(getξ(); A=A);
     Ω = logdet(Γ[L,L]);
     #------------------------
     Tracker.back!(Ω, 1);
@@ -164,7 +164,7 @@ function test_logdetΓ(n=100)
     #------------------------
     # approximation
     #------------------------
-    Ω = logdetΓ(getα(); A=A, P=L, t=128, k=128);
+    Ω = logdetΓ(getξ(); A=A, P=L, t=128, k=128);
     #------------------------
     Tracker.back!(Ω, 1);
     @printf("approximate:    %8.3f    [%s]\n", data(Ω), array2str(Tracker.grad(p)));
@@ -172,11 +172,11 @@ function test_logdetΓ(n=100)
     #------------------------
 end
 
-quadformSC(α::TrackedVector, rL::TrackedVector; A, L) = track(quadformSC, α, rL; A=A, L=L);
-@grad function quadformSC(α, rL; A, L)
+quadformSC(ξ::TrackedVector, rL::TrackedVector; A, L) = track(quadformSC, ξ, rL; A=A, L=L);
+@grad function quadformSC(ξ, rL; A, L)
     """
     Args:
-         α: model parameter vector
+         ξ: model parameter vector
         rL: noise on vertex set L
          A: matrix vector
          L: index set
@@ -185,21 +185,21 @@ quadformSC(α::TrackedVector, rL::TrackedVector; A, L) = track(quadformSC, α, r
          quadratic form: rL' (ΓLL - ΓLU ΓUU^-1 ΓUL) rL
     """
 
-    α = data(α);
+    ξ = data(ξ);
     rL = data(rL);
 
-    Γ = getΓ(α; A=A);
-    ∂Γ∂α = get∂Γ∂α(α; A=A);
+    Γ = getΓ(ξ; A=A);
+    ∂Γ∂ξ = get∂Γ∂ξ(ξ; A=A);
 
     U = setdiff(1:size(A[1],1), L);
 
     Ω = rL'*Γ[L,L]*rL - rL'*Γ[L,U]*cg(Γ[U,U],Γ[U,L]*rL);
 
     quadform_partials(M) = rL'*M[L,L]*rL - rL'*M[L,U]*cg(Γ[U,U],Γ[U,L]*rL) + rL'*Γ[L,U]*cg(Γ[U,U],M[U,U]*cg(Γ[U,U],Γ[U,L]*rL)) - rL'*Γ[L,U]*cg(Γ[U,U],M[U,L]*rL);
-    ∂Ω∂α = map(quadform_partials, ∂Γ∂α);
+    ∂Ω∂ξ = map(quadform_partials, ∂Γ∂ξ);
     ∂Ω∂rL = 2*Γ[L,L]*rL - 2*Γ[L,U]*cg(Γ[U,U],Γ[U,L]*rL);
 
-    return Ω, Δ -> tuple(Δ*∂Ω∂α, Δ*∂Ω∂rL);
+    return Ω, Δ -> tuple(Δ*∂Ω∂ξ, Δ*∂Ω∂rL);
 end
 
 function test_quadformSC(n=100)
@@ -215,14 +215,14 @@ function test_quadformSC(n=100)
 
     #------------------------
     p = param(rand(2));
-    getα() = p[:];
+    getξ() = p[:];
     #------------------------
 
     #------------------------
     # true value
     #------------------------
     Γ = Array{eltype(p)}(undef, n, n);
-    Γ .= getΓ(getα(); A=A);
+    Γ .= getΓ(getξ(); A=A);
     Γ = Tracker.collect(Γ);
     SC = Γ[L,L] - Γ[L,U]*inv(Γ[U,U])*Γ[U,L];
     Ω = getrL()' * SC * getrL();
@@ -235,7 +235,7 @@ function test_quadformSC(n=100)
     #------------------------
     # approximation
     #------------------------
-    Ω = quadformSC(getα(), getrL(); A=A, L=L);
+    Ω = quadformSC(getξ(), getrL(); A=A, L=L);
     #------------------------
     Tracker.back!(Ω, 1);
     @printf("accurate:       [%s],    [%s]\n", array2str(Tracker.grad(p)), array2str(Tracker.grad(rL)[1:10]));
@@ -243,11 +243,11 @@ function test_quadformSC(n=100)
     #------------------------
 end
 
-ΓX(α::TrackedVector, X; A, U, L) = track(ΓX, α, X; A=A, U=U, L=L);
-@grad function ΓX(α, X; A, U, L)
+ΓX(ξ::TrackedVector, X; A, U, L) = track(ΓX, ξ, X; A=A, U=U, L=L);
+@grad function ΓX(ξ, X; A, U, L)
     """
     Args:
-         α: model parameter vector
+         ξ: model parameter vector
          X: matrix
          A: matrix vector
          U: index set
@@ -258,17 +258,17 @@ end
     """
     @assert (size(X,1) == length(L))
 
-    α = data(α);
+    ξ = data(ξ);
     X = data(X);
 
-    Γ = getΓ(α; A=A);
-    ∂Γ∂α = get∂Γ∂α(α; A=A);
+    Γ = getΓ(ξ; A=A);
+    ∂Γ∂ξ = get∂Γ∂ξ(ξ; A=A);
 
     function sensitivity(ΔY)
         ΔΓUL = ΔY * X';
         ΔX = Γ[U,L]' * ΔY;
 
-        return tuple([sum(ΔΓUL .* ∂Γ∂α_[U,L]) for ∂Γ∂α_ in ∂Γ∂α], ΔX);
+        return tuple([sum(ΔΓUL .* ∂Γ∂ξ_[U,L]) for ∂Γ∂ξ_ in ∂Γ∂ξ], ΔX);
     end
 
     return Γ[U,L]*X, sensitivity;
@@ -287,13 +287,13 @@ function test_ΓB(n=100, m=20)
 
     #------------------------
     p = param(rand(2));
-    getα() = p[:];
+    getξ() = p[:];
     #------------------------
 
     #------------------------
     # true value
     #------------------------
-    Γ = getΓ(getα(); A=A);
+    Γ = getΓ(getξ(); A=A);
     Ω = sum((Γ[U,L]*X) .* C);
     #------------------------
     Tracker.back!(Ω, 1);
@@ -305,7 +305,7 @@ function test_ΓB(n=100, m=20)
     #------------------------
     # approximation
     #------------------------
-    Ω = sum(ΓX(getα(), X; A=A, L=L, U=U) .* C);
+    Ω = sum(ΓX(getξ(), X; A=A, L=L, U=U) .* C);
     #------------------------
     Tracker.back!(Ω, 1);
     ΔX1 = Tracker.grad(X);

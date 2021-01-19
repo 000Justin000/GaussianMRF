@@ -58,7 +58,7 @@ function get_adjacency_matrices(G, p; interaction_list=vcat([(i,i) for i in 1:p]
     return A;
 end
 
-function getα(φ, p; interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p]), ϵ=1.0e-5)
+function getξ(φ, p; interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p]), ϵ=1.0e-5)
     """
     Log-Cholesky parametrization of the precision matrix
 
@@ -103,7 +103,7 @@ function connected_watts_strogatz(n, k, p; num_trials=1000)
     return G;
 end
 
-function sample_synthetic(graph_size="medium", shift=0.0; synthetic_dict=Dict("p"=>1, "N"=>1, "α0"=>nothing), savedata=false)
+function sample_synthetic(graph_size="medium", shift=0.0; synthetic_dict=Dict("p"=>1, "N"=>1, "ξ0"=>nothing), savedata=false)
     Random.seed!(0);
 
     if graph_size == "tiny"
@@ -131,27 +131,27 @@ function sample_synthetic(graph_size="medium", shift=0.0; synthetic_dict=Dict("p
     A = get_adjacency_matrices(G, p; interaction_list=interaction_list);
 
     #-------------------------------------------------------------
-    # interactions encoded by α0
+    # interactions encoded by ξ0
     #-------------------------------------------------------------
     #    1:p   parameters: similarity between neighboring vertices
     #  p+1:2p  parameters: diagonal elements in γ
     # 2p+1:end parameters: off diagonal elements
     #-------------------------------------------------------------
-    if synthetic_dict["α0"] != nothing
-        α0 = synthetic_dict["α0"];
+    if synthetic_dict["ξ0"] != nothing
+        ξ0 = synthetic_dict["ξ0"];
     else
         # sample points from Gaussian distribution
         xx = randn(p,p);
         # compute the precision matrix of sampled points
         γ = inv(xx'*xx + 0.01*I);
         # parameters for the precision matrix for the GMRF model
-        α0 = vcat(10.0.^(shift .+ (rand(p).-0.5)), [γ[i,j] for (i,j) in interaction_list]);
+        ξ0 = vcat(10.0.^(shift .+ (rand(p).-0.5)), [γ[i,j] for (i,j) in interaction_list]);
         # print parameters
-        @printf("α0:    %s\n", array2str(α0)); flush(stdout);
+        @printf("ξ0:    %s\n", array2str(ξ0)); flush(stdout);
     end
 
     # define a Gaussian distribution with certain covariance matrix
-    CM0 = inv(Array(getΓ(α0; A=A)));
+    CM0 = inv(Array(getΓ(ξ0; A=A)));
     CM = (CM0 + CM0')/2.0;
     g = MvNormal(CM);
 
@@ -161,11 +161,11 @@ function sample_synthetic(graph_size="medium", shift=0.0; synthetic_dict=Dict("p
 
     if savedata
         open("datasets/synthetic/" * graph_size * "_" * @sprintf("%+2.1f", shift) * ".json", "w") do f
-            JSON.print(f, Dict("A"=>Matrix(adjacency_matrix(G)), "α0"=>α0, "Y"=>Y));
+            JSON.print(f, Dict("A"=>Matrix(adjacency_matrix(G)), "ξ0"=>ξ0, "Y"=>Y));
         end
     end
 
-    return G, α0, Y;
+    return G, ξ0, Y;
 end
 
 function prepare_data(dataset)
@@ -197,36 +197,36 @@ function prepare_data(dataset)
         error("unexpected dataset")
     end
 
-    λ_getα = φ -> getα(φ, p; interaction_list=interaction_list);
+    λ_getξ = φ -> getξ(φ, p; interaction_list=interaction_list);
 
-    return G, A, λ_getα, Y;
+    return G, A, λ_getξ, Y;
 end
 
-function fit_gmrf_once(G, A, λ_getα, Y, seed_val)
+function fit_gmrf_once(G, A, λ_getξ, Y, seed_val)
     Random.seed!(seed_val);
 
     n = nv(G);
     V = collect(1:size(A[1],1));
 
     #---------------------------------------------------------------------
-    # model dependent 2: from flux parameters to α
+    # model dependent 2: from flux parameters to ξ
     #---------------------------------------------------------------------
     ϕ = param(zeros(size(Y,1)));
     getρ() = reshape(ϕ, (size(Y,1),1));
     #---------------------------------------------------------------------
     φ = param(randn(length(A)));
-    getα() = λ_getα(φ);
+    getξ() = λ_getξ(φ);
     #---------------------------------------------------------------------
 
     function Equadform(Y)
         batch_size = size(Y,3);
         ys = [vec(Y[:,:,i] .- getρ()) for i in 1:batch_size];
 
-        return mean(quadformSC(getα(), ys_; A=A, L=V) for ys_ in ys);
+        return mean(quadformSC(getξ(), ys_; A=A, L=V) for ys_ in ys);
     end
 
     function loss(Y; t=128, k=64)
-        Ω = 0.5 * logdetΓ(getα(); A=A, P=V, t=t, k=k);
+        Ω = 0.5 * logdetΓ(getξ(); A=A, P=V, t=t, k=k);
         Ω -= 0.5 * Equadform(Y);
 
         return -Ω/n;
@@ -235,45 +235,45 @@ function fit_gmrf_once(G, A, λ_getα, Y, seed_val)
     n_step = 3000;
     n_batch = 1;
     N = size(Y,3);
-    print_params() = (@printf("α:     %s\n", array2str(getα())); flush(stdout));
+    print_params() = (@printf("ξ:     %s\n", array2str(getξ())); flush(stdout));
     dat = [(Y[:,:,sample(1:N, n_batch)],) for _ in 1:n_step];
     train!(loss, [Flux.params(φ)], dat, [ADAMW(1.0e-2, (0.9, 0.999), 2.5e-4)]; start_opts = [0], cb = print_params, cb_skip=n_step+1);
 
-    return data(getρ()), data(getα()), mean(data(loss(Y; t=256, k=128)) for _ in 1:30);
+    return data(getρ()), data(getξ()), mean(data(loss(Y; t=256, k=128)) for _ in 1:30);
 end
 
 function fit_gmrf(dataset)
     Random.seed!(0);
-    G, A, λ_getα, Y = prepare_data(dataset);
+    G, A, λ_getξ, Y = prepare_data(dataset);
 
     T = 32;
 
     ρρ = Vector{Any}(undef,T);
-    αα = Vector{Any}(undef,T);
+    ξξ = Vector{Any}(undef,T);
     LL = Vector{Any}(undef,T);
 
     print_lock = Threads.SpinLock()
 
     Threads.@threads for i in 1:T
-        ρ, α, L = fit_gmrf_once(G, A, λ_getα, Y, i);
-        ρρ[i], αα[i], LL[i] = ρ, α, L;
+        ρ, ξ, L = fit_gmrf_once(G, A, λ_getξ, Y, i);
+        ρρ[i], ξξ[i], LL[i] = ρ, ξ, L;
 
         lock(print_lock) do
-            @printf("ρ:     %s;    α:     %s\n", array2str(ρ), array2str(α)); flush(stdout);
+            @printf("ρ:     %s;    ξ:     %s\n", array2str(ρ), array2str(ξ)); flush(stdout);
         end
     end
 
     ρ_opt = ρρ[argmin(LL)];
-    α_opt = αα[argmin(LL)];
+    ξ_opt = ξξ[argmin(LL)];
 
-    @printf("ρ_opt: %s;    α_opt: %s\n", array2str(ρ_opt), array2str(α_opt)); flush(stdout);
+    @printf("ρ_opt: %s;    ξ_opt: %s\n", array2str(ρ_opt), array2str(ξ_opt)); flush(stdout);
 end
 
-function calculate_VI(G, p, α, lidx, fidx, dtr, dte)
+function calculate_VI(G, p, ξ, lidx, fidx, dtr, dte)
     # attribute interaction pairs on the same vertex
     interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p]);
     A = get_adjacency_matrices(G, p; interaction_list=interaction_list);
-    Γ = getΓ(α; A=A);
+    Γ = getΓ(ξ; A=A);
     @assert isposdef(Γ);
 
     # the indices for features in fidx and vertices in V
@@ -300,13 +300,13 @@ function calculate_VI(G, p, α, lidx, fidx, dtr, dte)
     return VI_L2_L1, VI_L2_F, VI_L2_FL1;
 end
 
-function estimate_VI(G, p, α, lidx, fidx, dtr, dte; t=128, k=128, seed_val=0)
+function estimate_VI(G, p, ξ, lidx, fidx, dtr, dte; t=128, k=128, seed_val=0)
     Random.seed!(seed_val);
 
     # attribute interaction pairs on the same vertex
     interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p])
     A = get_adjacency_matrices(G, p; interaction_list=interaction_list);
-    Γ = getΓ(α; A=A);
+    Γ = getΓ(ξ; A=A);
     @assert isposdef(Γ);
 
     # the indices for features in fidx and vertices in V

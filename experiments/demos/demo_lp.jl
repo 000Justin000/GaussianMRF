@@ -16,7 +16,7 @@ function demo_synthetic(graph_size="medium")
     #-----------------------------------------------------------------------------------
         Random.seed!(0);
         #-------------------------------------------------------------------------------
-        G, _, Y = sample_synthetic(graph_size, nothing; synthetic_dict=Dict("p"=>1, "N"=>ntrials, "α0"=>[ω0,1.0]));
+        G, _, Y = sample_synthetic(graph_size, nothing; synthetic_dict=Dict("p"=>1, "N"=>ntrials, "ξ0"=>[ω0,1.0]));
         #-------------------------------------------------------------------------------
         for (j,ω) in enumerate(ωs)
         #-------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ function demo_synthetic(graph_size="medium")
                 labels = Y[1,:,seed_val];
                 #-------------------------------------------------------------------------------
                 dtr, _, dte = rand_split(nv(G), [split_ratio, 0.0, 1.0-split_ratio]; seed_val=seed_val);
-                ac[i,j,seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="mean", residual_propagation=true,  η=ω/(1+ω), n_step=100, seed_val=seed_val)[end];
+                ac[i,j,seed_val] = run_dataset(G, feats, labels, dtr, dte, feature_smoothing=false, predictor="mean", residual_propagation=true,  α=ω/(1+ω), n_step=100, seed_val=seed_val)[end];
             end
         #-------------------------------------------------------------------------------
         end
