@@ -1,33 +1,1333 @@
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       40.15673,  275.67283,   41.72981,  102.80526,  302.48046,   50.50568,   28.55518,    6.50823,    0.49051,    4.37027,   37.47593,  -16.34177,    0.60544,   13.72360,  -11.82883,    0.40160,   10.47543,    0.13627,   -4.31540,    0.26100
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       48.17259,  274.50501,   41.48450,  102.60671,  301.97572,   41.00696,   24.05665,    5.97213,    0.49641,    3.93635,   30.87441,  -14.00975,    0.25986,   11.60694,  -10.20315,    0.14899,    9.05774,    0.23976,   -3.82657,    0.20334
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       44.18944,  275.83415,   41.45140,  102.93708,  304.21618,   45.98206,   24.15645,    6.55792,    0.49510,    3.78868,   32.73725,  -15.69651,    0.68660,   12.12101,  -10.85506,    0.42334,    8.95785,    0.08751,   -4.01030,    0.28053
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       48.47753,  273.54492,   41.53102,  102.61175,  302.91536,   39.94816,   23.32223,    5.98151,    0.49082,    3.59696,   30.04906,  -13.85096,    0.51338,   10.99068,  -10.08233,    0.33630,    8.53737,    0.15478,   -3.66878,    0.21329
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       42.95280,  274.47542,   41.56550,  102.74751,  303.69013,   47.42637,   24.86748,    6.48200,    0.50080,    3.88959,   33.79657,  -15.82244,    0.61159,   12.47471,  -10.97592,    0.37502,    9.19795,    0.12953,   -4.04714,    0.29021
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       47.66069,  276.38541,   41.44062,  102.32417,  303.21541,   40.36995,   21.34533,    6.08643,    0.49940,    3.57125,   28.82844,  -14.06188,    0.40531,   10.95143,   -9.66488,    0.25052,    8.07715,    0.19454,   -3.66693,    0.23476
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       57.38326,  280.31576,   41.18662,  102.55240,  303.90832,   27.41144,   11.25194,    5.11842,    0.48404,    2.44096,   16.95590,  -10.43668,    0.29344,    7.14893,   -6.15028,    0.11860,    4.74543,    0.20850,   -2.58565,    0.20295
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       39.54219,  275.38032,   41.70374,  102.74729,  301.59442,   50.92891,   28.34344,    6.65496,    0.49646,    4.35719,   37.46675,  -16.66877,    0.62238,   13.82841,  -11.95852,    0.39577,   10.49194,    0.11712,   -4.39640,    0.29708
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       40.29668,  276.02938,   41.66783,  102.40868,  303.90305,   50.23060,   28.39724,    6.65341,    0.50103,    4.32672,   37.26185,  -16.55143,    0.57221,   13.62429,  -11.97754,    0.36845,   10.39006,    0.14266,   -4.36663,    0.26362
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       43.91069,  278.86711,   41.50196,  103.05398,  303.31790,   44.92035,   21.79809,    6.37281,    0.49774,    3.82960,   30.76386,  -15.24019,    0.52009,   12.01255,  -10.13754,    0.30559,    8.53605,    0.15231,   -3.95183,    0.26594
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       42.18511,  277.85122,   42.04697,  102.82953,  303.10079,   48.23071,   27.01299,    6.40523,    0.43322,    4.15176,   35.78604,  -15.92539,    0.59229,   13.32074,  -11.48999,    0.19755,    9.91580,    0.13997,   -4.23768,    0.16770
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       44.37471,  275.91781,   41.57629,  102.27735,  303.04440,   44.86874,   23.65742,    6.33271,    0.50133,    3.93274,   32.04045,  -15.18298,    0.47184,   12.15765,  -10.54108,    0.27253,    8.99197,    0.17270,   -3.98872,    0.25019
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       43.09436,  276.55054,   41.62165,  102.92824,  303.76849,   46.30638,   25.47738,    6.42687,    0.47098,    4.00641,   33.91547,  -15.55530,    0.58658,   12.63649,  -11.09829,    0.36939,    9.45540,    0.14535,   -4.06253,    0.23639
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       42.70500,  275.56306,   41.80906,  102.26502,  301.97478,   47.37218,   25.95333,    6.38153,    0.49825,    4.18129,   34.54106,  -15.71932,    0.56977,   12.99963,  -11.13912,    0.36136,    9.79347,    0.13485,   -4.18790,    0.28257
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       44.73662,  276.14465,   41.92229,  102.55476,  303.85066,   44.96599,   24.48631,    6.22669,    0.53523,    3.89370,   33.14746,  -15.18159,    0.55468,   12.21402,  -11.31098,    0.34565,    9.07079,    0.10993,   -4.06630,    0.27259
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       79.93608,  289.33472,   42.79682,  102.69123,  304.18745,    3.93753,    0.85536,    2.49519,    0.48070,    0.72199,    0.94012,   -2.58002,   -0.02463,    0.74174,   -0.47303,   -0.07393,    0.47857,    0.30440,   -0.36808,    0.10002
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       46.40814,  276.43739,   41.68122,  103.03655,  303.49485,   41.80136,   20.53462,    6.08517,    0.51448,    3.59277,   28.70676,  -14.32743,    0.62839,   11.12149,   -9.52760,    0.37772,    7.95579,    0.10308,   -3.68778,    0.29047
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       46.49122,  277.93960,   41.44996,  102.72567,  303.10318,   41.94789,   21.56695,    6.11352,    0.49769,    3.52020,   29.51205,  -14.36690,    0.41137,   11.08309,   -9.78442,    0.23843,    8.12405,    0.18868,   -3.66245,    0.24318
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       45.71615,  273.69321,   41.76352,  102.48068,  302.08914,   43.11881,   24.65052,    6.17610,    0.49154,    4.01429,   32.08310,  -14.69392,    0.45714,   12.10643,  -10.60471,    0.29173,    9.32485,    0.17248,   -3.99812,    0.25105
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       45.85295,  274.63863,   41.97611,  102.54417,  302.57549,   43.36337,   24.45925,    6.18049,    0.42529,    3.79134,   32.25192,  -14.77986,    0.32022,   12.01796,  -10.61918,    0.05544,    8.97749,    0.21742,   -3.93066,    0.08333
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       47.00159,  278.11214,   41.30753,  102.87502,  302.86695,   41.16258,   19.35851,    6.19611,    0.49797,    3.43543,   27.59169,  -14.33963,    0.54846,   10.78124,   -9.28994,    0.31342,    7.58095,    0.13676,   -3.62079,    0.27585
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       53.00861,  272.06160,   41.56722,  102.71949,  302.77684,   34.39135,   21.15813,    5.49695,    0.49026,    3.54544,   26.48618,  -12.20154,    0.15517,   10.04828,   -9.07130,    0.05933,    8.03272,    0.26331,   -3.42816,    0.17161
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       43.73855,  277.44519,   41.87484,  102.59969,  303.06797,   45.94493,   25.78442,    6.25254,    0.52919,    4.00399,   34.41067,  -15.42344,    0.40572,   12.57805,  -11.65703,    0.26929,    9.42020,    0.15037,   -4.17705,    0.23478
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       51.14619,  273.64588,   41.36105,  102.91557,  303.36601,   36.74249,   21.76862,    5.81221,    0.49536,    3.59558,   27.77710,  -13.03950,    0.40005,   10.47569,   -9.51750,    0.25662,    8.21162,    0.18953,   -3.56950,    0.20574
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       47.86731,  280.02450,   41.40536,  102.21369,  301.76095,   40.65834,   19.89384,    6.11065,    0.49692,    3.44674,   28.27011,  -14.16498,    0.53943,   10.81321,   -9.32761,    0.52738,    7.62638,    0.10127,   -3.55596,    0.31335
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       47.29560,  275.13763,   41.31631,  102.54707,  301.21280,   41.78349,   24.35430,    6.25568,    0.49238,    3.85752,   31.39470,  -14.52254,    0.32206,   11.63590,  -10.58123,    0.18583,    9.05440,    0.21069,   -3.91061,    0.21664
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       43.02110,  276.76565,   41.84839,  102.82095,  301.87983,   45.58838,   22.99586,    6.31576,    0.49505,    3.90641,   31.81987,  -15.30941,    0.67905,   12.27124,  -10.37791,    0.41967,    8.89012,    0.09526,   -3.99622,    0.31130
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       53.65042,  278.33131,   41.56131,  101.90092,  301.73575,   33.15441,   18.18865,    5.41384,    0.48465,    3.13157,   24.19045,  -11.86052,    0.19482,    9.16926,   -7.86433,    0.35507,    6.89446,    0.21326,   -3.01103,    0.23394
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       41.81039,  275.89620,   41.68251,  102.87784,  303.05653,   49.00950,   26.76998,    6.57386,    0.51986,    4.22951,   35.70304,  -16.24914,    0.58465,   13.28901,  -11.53753,    0.37610,    9.98151,    0.12725,   -4.28457,    0.28692
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       42.57342,  273.18555,   41.79367,  102.81301,  304.03249,   46.93810,   26.57031,    6.39704,    0.49498,    4.04660,   34.78428,  -15.62403,    0.60636,   12.72721,  -11.27614,    0.38853,    9.73937,    0.12406,   -4.11866,    0.28685
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       42.36627,  276.69617,   41.50612,  102.62563,  302.54930,   47.88939,   25.97106,    6.55615,    0.51361,    4.17854,   34.74422,  -16.01114,    0.48724,   13.09601,  -11.31900,    0.30031,    9.82798,    0.16936,   -4.25698,    0.26326
-ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:       47.57836,  277.32958,   41.43601,  102.79393,  301.55126,   39.93301,   20.31311,    6.00978,    0.49309,    3.51266,   27.85743,  -13.87042,    0.30203,   10.75311,   -9.34941,    0.14435,    7.85243,    0.22097,   -3.60721,    0.20443
-ρ_opt:    0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ_opt:   41.81039,  275.89620,   41.68251,  102.87784,  303.05653,   49.00950,   26.76998,    6.57386,    0.51986,    4.22951,   35.70304,  -16.24914,    0.58465,   13.28901,  -11.53753,    0.37610,    9.98151,    0.12725,   -4.28457,    0.28692
+ρ:        0.00000,    0.00000,    0.00000,    0.00000,    0.00000;    ξ:        1.81223,    1.97755,    0.74253,    1.32417,    0.58378,    1.08333,    7.66103,    1.19900,    2.42029,    6.80467,    0.84474,    0.74655,    0.89638,    1.29010,    2.34382,   -1.32161,    1.64972,   -0.06182,    0.56735,   -0.80311
+
+signal (15): Terminated
+in expression starting at none:1
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:46
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:847 [inlined]
+fill! at ./array.jl:357 [inlined]
+mul! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:35
+* at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:50 [inlined]
+#46 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:45
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:847 [inlined]
+getindex_I_sorted_bsearch_I at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2328
+getindex_I_sorted at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2147
+getindex at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2415
+#46 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:45
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
++ at ./arraymath.jl:47
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:51
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
+- at ./arraymath.jl:39
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
+- at ./arraymath.jl:39
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:46
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+mul! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:41
+* at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:50 [inlined]
+#46 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:45
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+trΓiM at /home/jj585/Projects/GaussianMRF/kernels.jl:136
+unknown function (ip: 0x7fbd581b2a5a)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+iterate at ./generator.jl:47 [inlined]
+collect_to! at ./array.jl:732
+collect_to_with_first! at ./array.jl:710
+unknown function (ip: 0x7fbd581b2f57)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+_collect at ./array.jl:704
+collect_similar at ./array.jl:628
+unknown function (ip: 0x7fbd581b1c85)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+map at ./abstractarray.jl:2162
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:137 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:49
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:47
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
++ at ./arraymath.jl:47
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:47
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
++ at ./arraymath.jl:47
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:47
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
++ at ./arraymath.jl:47
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:47
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:847 [inlined]
+getindex_I_sorted_bsearch_I at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2329
+getindex_I_sorted at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2147
+getindex at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2415
+quadform_partials at /home/jj585/Projects/GaussianMRF/kernels.jl:198
+unknown function (ip: 0x7fbd581bad01)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+iterate at ./generator.jl:47 [inlined]
+collect_to! at ./array.jl:732
+collect_to_with_first! at ./array.jl:710
+unknown function (ip: 0x7fbd581bb577)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+_collect at ./array.jl:704
+collect_similar at ./array.jl:628
+unknown function (ip: 0x7fbd581ba0d5)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+map at ./abstractarray.jl:2162
+#_forward#54 at /home/jj585/Projects/GaussianMRF/kernels.jl:199 [inlined]
+#_forward#54 at ./none:0
+_forward##kw at ./none:0
+unknown function (ip: 0x7fbd581b3e1c)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+do_apply at /buildworker/worker/package_linux64/build/src/builtins.c:655
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#quadformSC#53 at /home/jj585/Projects/GaussianMRF/kernels.jl:175 [inlined]
+quadformSC##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:175 [inlined]
+#184 at ./none:0 [inlined]
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:62
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+Equadform at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:213 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:218
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+mprotect at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x7fbe36a54d0d)
+unknown function (ip: 0x7fbe36a57e5d)
+unknown function (ip: 0x7fbe36a5917f)
+unknown function (ip: 0x7fbe36a5967a)
+posix_memalign at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+jl_malloc_aligned at /buildworker/worker/package_linux64/build/src/gc.c:235 [inlined]
+jl_gc_managed_malloc at /buildworker/worker/package_linux64/build/src/gc.c:3340
+_new_array_ at /buildworker/worker/package_linux64/build/src/array.c:103 [inlined]
+_new_array at /buildworker/worker/package_linux64/build/src/array.c:162 [inlined]
+jl_alloc_array_2d at /buildworker/worker/package_linux64/build/src/array.c:440
+Array at ./boot.jl:408 [inlined]
+Array at ./boot.jl:416 [inlined]
+Array at ./boot.jl:423 [inlined]
+similar at ./abstractarray.jl:675 [inlined]
+similar at ./abstractarray.jl:674 [inlined]
+similar at ./broadcast.jl:197 [inlined]
+similar at ./broadcast.jl:196 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+trΓiM at /home/jj585/Projects/GaussianMRF/kernels.jl:136
+unknown function (ip: 0x7fbd581b2a5a)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+iterate at ./generator.jl:47 [inlined]
+collect_to! at ./array.jl:732
+collect_to_with_first! at ./array.jl:710
+unknown function (ip: 0x7fbd581b2f57)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+_collect at ./array.jl:704
+collect_similar at ./array.jl:628
+unknown function (ip: 0x7fbd581b1c85)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+map at ./abstractarray.jl:2162
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:137 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+* at ./float.jl:405 [inlined]
+mul! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:41
+* at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:50 [inlined]
+#46 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:45
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:47
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
++ at ./float.jl:401 [inlined]
+mul! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:41
+* at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/linalg.jl:50 [inlined]
+#46 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:45
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+dlaset_64_ at /home/jj585/Softwares/julia/julia-1.5.3/bin/../lib/julia/libopenblas64_.so (unknown line)
+dlarrv_64_ at /home/jj585/Softwares/julia/julia-1.5.3/bin/../lib/julia/libopenblas64_.so (unknown line)
+dstemr_64_ at /home/jj585/Softwares/julia/julia-1.5.3/bin/../lib/julia/libopenblas64_.so (unknown line)
+dstegr_64_ at /home/jj585/Softwares/julia/julia-1.5.3/bin/../lib/julia/libopenblas64_.so (unknown line)
+stegr! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/LinearAlgebra/src/lapack.jl:3808
+stegr! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/LinearAlgebra/src/lapack.jl:3881 [inlined]
+eigen! at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/LinearAlgebra/src/tridiag.jl:279 [inlined]
+eigen at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/LinearAlgebra/src/tridiag.jl:280
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:131 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:46
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:51
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:51
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:51
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:847 [inlined]
+getindex_I_sorted_bsearch_I at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2329
+getindex_I_sorted at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2147
+getindex at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/SparseArrays/src/sparsematrix.jl:2415
+#46 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:45
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:46
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+setindex! at ./array.jl:849 [inlined]
+setindex! at ./multidimensional.jl:559 [inlined]
+macro expansion at ./broadcast.jl:932 [inlined]
+macro expansion at ./simdloop.jl:77 [inlined]
+copyto! at ./broadcast.jl:931 [inlined]
+copyto! at ./broadcast.jl:886 [inlined]
+copy at ./broadcast.jl:862 [inlined]
+materialize at ./broadcast.jl:837 [inlined]
+broadcast_preserving_zero_d at ./broadcast.jl:826 [inlined]
+- at ./arraymath.jl:39
+#mBCG#27 at /home/jj585/Projects/GaussianMRF/kernels.jl:48
+unknown function (ip: 0x7fbd581b0921)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+mBCG##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:17
+unknown function (ip: 0x7fbd581a2acc)
+#_forward#44 at /home/jj585/Projects/GaussianMRF/kernels.jl:127 [inlined]
+#_forward#44 at ./none:0
+_forward##kw at ./none:0 [inlined]
+#track#1 at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52
+track##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/Tracker.jl:52 [inlined]
+#logdetΓ#43 at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+logdetΓ##kw at /home/jj585/Projects/GaussianMRF/kernels.jl:103 [inlined]
+loss#185 at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+loss#193##kw at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:217
+unknown function (ip: 0x7fbd5009a013)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#187 at ./none:0
+iterate at ./generator.jl:47 [inlined]
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:76
+mean at /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.5/Statistics/src/Statistics.jl:44 [inlined]
+fit_gmrf_once at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:230
+macro expansion at /home/jj585/Projects/GaussianMRF/fit_gmrf.jl:246 [inlined]
+#265#threadsfor_fun at ./threadingconstructs.jl:81
+#265#threadsfor_fun at ./threadingconstructs.jl:48
+unknown function (ip: 0x7fbd58193afc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+epoll_pwait at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+uv__io_poll at /workspace/srcdir/libuv/src/unix/linux-core.c:270
+uv_run at /workspace/srcdir/libuv/src/unix/core.c:359
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:473
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+wait at ./condition.jl:106
+_trywait at ./asyncevent.jl:110
+wait at ./asyncevent.jl:128 [inlined]
+sleep at ./asyncevent.jl:213
+unknown function (ip: 0x7fbd58193fa3)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+macro expansion at /home/jj585/.julia/packages/CuArrays/kOUu1/src/memory/binned.jl:249 [inlined]
+#5 at ./task.jl:356
+unknown function (ip: 0x7fbd581830dc)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+start_task at /buildworker/worker/package_linux64/build/src/task.c:705
+unknown function (ip: (nil))
+unknown function (ip: (nil))
+Allocations: 189073483 (Pool: 187347618; Big: 1725865); GC: 603

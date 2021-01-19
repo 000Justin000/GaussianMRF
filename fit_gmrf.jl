@@ -220,7 +220,7 @@ function fit_gmrf_once(G, A, λ_getξ, Y, seed_val)
         return -Ω/n;
     end
 
-    n_step = 3000;
+    n_step = 30;
     n_batch = 1;
     N = size(Y,3);
     print_params() = (@printf("ξ:     %s\n", array2str(getξ())); flush(stdout));
@@ -234,7 +234,7 @@ function fit_gmrf(dataset)
     Random.seed!(0);
     G, A, λ_getξ, Y = prepare_data(dataset);
 
-    T = 32;
+    T = 4;
 
     ρρ = Vector{Any}(undef,T);
     ξξ = Vector{Any}(undef,T);

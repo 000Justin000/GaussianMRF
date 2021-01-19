@@ -118,7 +118,7 @@ function read_county_facebook(year, prediction)
 end
 
 function read_climate(year, prediction)
-    adj = CSV.read("datasets/county/adjacency.txt", DataFrame; header=0);
+    adj = CSV.read("datasets/climate/adjacency.txt", DataFrame; header=0);
     fips2cty = Dict();
     for i in 1:size(adj,1)
         if !ismissing(adj[i,2])
