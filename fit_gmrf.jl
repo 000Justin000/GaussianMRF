@@ -169,33 +169,21 @@ function sample_synthetic(graph_size="medium", shift=0.0; synthetic_dict=Dict("p
 end
 
 function prepare_data(dataset)
-    if ((match(r"^synthetic_([a-z]+)_([0-9.+-]+)_([0-9]+)_([0-9]+)", dataset) !== nothing) ||
-        (match(r"^county_([0-9]+)_(.+)", dataset) !== nothing) ||
-        (match(r"^facebook_(.+)", dataset) !== nothing) ||
-        (match(r"^county_facebook_([0-9]+)_(.+)", dataset) !== nothing) ||
-        (match(r"^climate_([0-9]+)_(.+)", dataset) !== nothing) ||
-        (match(r"^ward_([0-9]+)_(.+)", dataset) !== nothing) ||
-        (match(r"^twitch_(.+)_true_([0-9]+)", dataset) !== nothing) ||
-        (match(r"^social_traits_([a-zA-Z]+)_([a-zA-Z]+)", dataset) !== nothing) ||
-        (match(r"^cropsim_([a-z]+)_([0-9]+)_([0-9]+)", dataset) !== nothing))
-        # read the graph topology G, labels, and features
-        G, _, labels, feats = read_network(dataset);
+    # read the graph topology G, labels, and features
+    G, _, labels, feats = read_network(dataset);
 
-        # n: number of vertices in G
-        n = nv(G);
+    # n: number of vertices in G
+    n = nv(G);
 
-        # p: number of attributes
-        p = length(feats[1]) + length(labels[1]);
+    # p: number of attributes
+    p = length(feats[1]) + length(labels[1]);
 
-        # attribute interaction pairs on the same vertex
-        interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p])
-        A = get_adjacency_matrices(G, p; interaction_list=interaction_list);
+    # attribute interaction pairs on the same vertex
+    interaction_list=vcat([(i,i) for i in 1:p], [(i,j) for i in 1:p for j in i+1:p])
+    A = get_adjacency_matrices(G, p; interaction_list=interaction_list);
 
-        # the vertex attributes is give by a three dimensional tensor: attribute_type × vertex × sample
-        Y = unsqueeze(hcat([vcat(feat,label) for (feat,label) in zip(feats,labels)]...), 3);
-    else
-        error("unexpected dataset")
-    end
+    # the vertex attributes is give by a three dimensional tensor: attribute_type × vertex × sample
+    Y = unsqueeze(hcat([vcat(feat,label) for (feat,label) in zip(feats,labels)]...), 3);
 
     λ_getξ = φ -> getξ(φ, p; interaction_list=interaction_list);
 

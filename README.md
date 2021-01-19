@@ -15,73 +15,53 @@ Our code is tested under in Julia 1.4.1, you can install all dependent packages 
 julia env.jl
 ```
 
-### Usage
+### Basic Usage
 Our code implement the three algorithms outlined above, as well as some baselines and variants. In order to use our code for your own prediction problem, the following information is required:
 - **G:** the topology of your graph as a LightGraph object 
 - **feats:** an array of feature vectors
 - **labels:** an array of real-valued outcomes
 
-All prediction algorithms considered in our paper are implement as one single function [run_dataset](predict.jl#L18) with different options. Each algorithm can be decomposed into three steps: 1) feature pre-processing, 2) inductive prediction, 3) residual propagation. The options corresponding to each algorithm can be summarized as follows:
+All prediction algorithms considered in our paper are implement as one single function [run_dataset](predict.jl#L100) with different options (e.g. the smoothing level α, nonlinear activation σ, number of GCN layers K). Each algorithm can be decomposed into three steps: 1) feature pre-processing, 2) inductive prediction, 3) residual propagation. The options corresponding to the algorithms consider in our paper can be summarized as follows:
 
-| <td colspan=2 align=center>**step 1** <td colspan=2 align=center>**step 2** <td colspan=2 align=center>**step 3**
+| <td colspan=2 align=center>**step 1** <td colspan=3 align=center>**step 2** <td colspan=2 align=center>**step 3**
 |-
-|**Options** <td>**feature_smoothing** <td>**α** <td>**predictor** <td>**σ**    <td>**residual_propagation** <td>**α**
-|LP          <td>false                 <td>      <td>mean          <td>         <td>true                     <td>[0,1]
-|LR          <td>false                 <td>      <td>mlp           <td>identity <td>false                    <td>
-|LGC         <td>true                  <td>[0,1] <td>mlp           <td>identity <td>false                    <td>
-|SGC         <td>false                 <td>      <td>gcn           <td>identity <td>false                    <td>
-|GCN         <td>false                 <td>      <td>gcn           <td>relu     <td>false                    <td>
-|LGC/RP      <td>true                  <td>[0,1] <td>mlp           <td>identity <td>true                     <td>[0,1]
-|SGC/RP      <td>false                 <td>      <td>gcn           <td>identity <td>true                     <td>[0,1]
-|GCN/RP      <td>false                 <td>      <td>gcn           <td>relu     <td>true                     <td>[0,1]
+|**Options** <td>**feature_smoothing** <td>**α** <td>**predictor** <td>**σ**    <td>**K**     <td>**residual_propagation** <td>**α**
+|LP          <td>false                 <td>      <td>mean          <td>         <td>          <td>true                     <td>[0,1]
+|LR          <td>false                 <td>      <td>mlp           <td>identity <td>          <td>false                    <td>
+|LGC         <td>true                  <td>[0,1] <td>mlp           <td>identity <td>          <td>false                    <td>
+|SGC         <td>false                 <td>      <td>gcn           <td>identity <td>{1,2,...} <td>false                    <td>
+|GCN         <td>false                 <td>      <td>gcn           <td>relu     <td>{1,2,...} <td>false                    <td>
+|LGC/RP      <td>true                  <td>[0,1] <td>mlp           <td>identity <td>          <td>true                     <td>[0,1]
+|SGC/RP      <td>false                 <td>      <td>gcn           <td>identity <td>{1,2,...} <td>true                     <td>[0,1]
+|GCN/RP      <td>false                 <td>      <td>gcn           <td>relu     <td>{1,2,...} <td>true                     <td>[0,1]
 
 
-LP-GNN algorithm requires minimal implementation overhead on top of standard GNN. The following is code snippet from [example_lpgnn.jl](examples/example_lpgnn.jl#L18) that predicts county-level election outcomes with demographical features.
+For example, to run LGC/RP on the 2016 U.S. dataset to predict election outcomes, you can simply do the following:
 ```julia
-#---------------------------------------------------------------------------------------------
 # read the four requirements as listed above
-#---------------------------------------------------------------------------------------------
-G, A, labels, feats = read_network(network_trans);
-#---------------------------------------------------------------------------------------------
+G, _, labels, feats = read_network("county_facebook_2016_election");
 
-#---------------------------------------------------------------------------------------------
-# define and train GNN
-#---------------------------------------------------------------------------------------------
-# encoder that embed vertices to vector representations
-enc = graph_encoder(length(feats[1]), dim_out, dim_h, repeat(["SAGE_Mean"], 2); Ïƒ=relu);
-# regression layer that maps representation to prediction
-reg = Dense(dim_out, 1); 
-# GNN prediction 
-getRegression = L -> vcat(reg.(enc(G, L, u->feats[u]))...);
-# training
-Flux.train!(L->mse(labels[L], getRegression(L)), params(enc, reg), mini_batches, ADAM(0.001));
-#---------------------------------------------------------------------------------------------
+# random split, 30% training and 70% testing
+ll, uu = rand_split(nv(G), [0.3, 0.7]);
 
-#---------------------------------------------------------------------------------------------
-# LP-GNN testing
-#---------------------------------------------------------------------------------------------
-# Î“: normalized Laplacian matrix
-# L: training vertices
-# U: testing vertices
-# rL: GNN predicted residual for testing vertices
-# lU: LP-GNN predicted outcomes for testing vertices
-#---------------------------------------------------------------------------------------------
-pL = getRegression(L)
-pU = getRegression(U)
-
-rL = labels[L] - data(pL);
-lU = pU + cg(Î“[U,U], -Î“[U,L]*rL);
-#---------------------------------------------------------------------------------------------
+# prediction routine
+run_dataset(G, feats, labels, ll, uu; 
+            feature_smoothing=true, α=0.95, predictor="mlp", σ=identity, residual_propagation=true)
 ```
-In the algorithm above, only the last 4 lines differ from the standard GNN.
+Please see [example.jl](examples/example.jl) for more details.
 
-The C-GNN algorithm is slightly more involving since it need to optimize the framework parameters to fit the observed correlation pattern. An example is given in [example_cgnn.jl](examples/example_cgnn.jl), which only introduce tens of lines additional code comparing to the standard GNN algorithm.
 
-In order to run the examples, you can simply use:
+### Fitting Gaussian MRF
+In order to fit a dataset to our proposed Gaussian MRF, one can simply run the following:
 ```julia
-julia examples/example_cgnn.jl
-julia examples/example_lpgnn.jl
+# fit dataset to a Gaussian MRF
+fit_gmrf("county_facebook_2016_election")
 ```
+This function would call [read_network](read_network.jl#L320) internally to collect the graph topology and node attributes. It will print out all the Gaussian MRF parameters after finish.
+
+
+### Using Your Own Data
+To use our code for your data, you simply need to add your data to the loader [read_network](read_network.jl#L320). One thing you probably want to do is to normalize each node feature (as well as the outcome) to have zero mean. For a simple example of how to write the data loader, see [read_ward](read_network.jl#L187).
 
 
 ### Reproduce Experiments in Paper
@@ -89,6 +69,6 @@ The experiments in our paper can be reproduced by running.
 ```
 bash run.sh
 ```
-which would write the outputs to [/logs](/logs).
+which would write the outputs to [/results](/results). This potentially takes a long time due to hyperparameter scanning.
 
 If you have any questions, please email to [jj585@cornell.edu](mailto:jj585@cornell.edu).

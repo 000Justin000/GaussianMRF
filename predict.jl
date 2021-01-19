@@ -97,7 +97,7 @@ function estimate_residual(U, L; LBL, pL, Γ)
 end
 
 # learn and test accuracy
-function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predictor="zero", residual_propagation=false, α=0.5, K=2, σ=relu, n_step=500, cb_skip=100, seed_val=0, return_predictions=false, return_trace=false, return_predmap=false)
+function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predictor="mean", residual_propagation=false, α=0.5, K=2, σ=relu, n_step=500, cb_skip=100, seed_val=0, return_predictions=false, return_trace=false, return_predmap=false)
     """
     Args:
           G: an undirected graph instance from LightGraphs.jl
