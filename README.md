@@ -1,9 +1,9 @@
 ## GaussianMRF
 
 ### This repository hosts the code and some example data for the following paper:  
-[An Attributed Data Model for Graph Learning Algorithms](https://arxiv.org/abs/2002.XXXXX)  
+[An Attributed Data Model for Graph Learning Algorithms](https://arxiv.org/abs/2101.07730)  
 [Junteng Jia](https://000justin000.github.io/), and [Austin R. Benson](https://www.cs.cornell.edu/~arb/)  
-arXiv:2002.XXXXX, 2021.
+arXiv:2101.07730, 2021.
 
 Our paper propose a generative model that unifies traditional label propagation algorithm and graph neural networks. Our model assume the node features and labels are jointly sampled from a Gaussian Markov random field (MRF). Therefore we can derive discriminative learning algorithms by computing the expectation of outcomes of the unknown nodes conditioned on different observations. In particular, the expectation of the unkonwn outcomes
 - conditioned on the observed outcomes ⟶ **Label Propagation**.
