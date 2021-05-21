@@ -211,9 +211,9 @@ function read_ward(year, prediction)
     end
 
     if year == 2016
-        ff[:,6] = parse_mean_fill(log.(info0[:,3]), true);
+        ff[:,6] = parse_mean_fill(info0[:,3], true);
     elseif year == 2012
-        ff[:,6] = parse_mean_fill(log.(info0[:,4]), true);
+        ff[:,6] = parse_mean_fill(info0[:,4], true);
     else
         error("unexpected year");
     end
