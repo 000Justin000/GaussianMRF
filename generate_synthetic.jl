@@ -27,18 +27,18 @@ function connected_watts_strogatz(n, k, p; num_trials=1000)
     return G;
 end
 
-function sample_synthetic(graph_type="wattz_strogatz", shift=0.0; synthetic_dict=Dict("p"=>1, "N"=>1, "ξ0"=>nothing), savedata=false)
+function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=Dict("p"=>1, "N"=>1, "ξ0"=>nothing), savedata=false)
     Random.seed!(0);
 
-    if graph_type == "tiny"
+    if graph_type == "Tiny"
         G = complete_graph(2);
-    elseif graph_type == "watts_strogatz_small"
-        G = connected_watts_strogatz(100, 6, 0.05);
-    elseif graph_type == "ring"
+    elseif graph_type == "Ring"
         G = connected_watts_strogatz(1000, 6, 0.00);
-    elseif graph_type == "watts_strogatz"
+    elseif graph_type == "WattsStrogatzSmall"
+        G = connected_watts_strogatz(100, 6, 0.05);
+    elseif graph_type == "WattsStrogatz"
         G = connected_watts_strogatz(1000, 6, 0.01);
-    elseif graph_type == "sbm_small"
+    elseif graph_type == "StochasticBlockModelSmall"
         G = stochastic_block_model(5, 1, [20, 20, 20, 20, 20]);
     else
         error("unexpected option");
