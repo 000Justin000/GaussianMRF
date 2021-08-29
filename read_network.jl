@@ -25,8 +25,8 @@ function parse_mean_fill(vr, normalize=false)
     return vv;
 end
 
-function read_synthetic(graph_size="medium", shift=0.0, sample_id=1, prediction_id=1)
-    dat = JSON.parsefile("datasets/synthetic/" * graph_size * "_" * @sprintf("%+2.1f", shift) * ".json");
+function read_watts_strogatz(graph_size="medium", shift=0.0, sample_id=1, prediction_id=1)
+    dat = JSON.parsefile("datasets/synthetic/watts_strogatz/" * graph_size * "_" * @sprintf("%+2.1f", shift) * ".json");
 
     g = Graph([dat["A"][j][i] for i = 1:length(dat["A"][1]), j = 1:length(dat["A"])]);
     Y = [dat["Y"][k][j][i] for i = 1:length(dat["Y"][1][1]), j = 1:length(dat["Y"][1]), k = 1:length(dat["Y"])];
@@ -318,7 +318,7 @@ function read_bitcoin_transaction()
 end
 
 function read_network(network_name)
-    (p = match(r"^synthetic_([a-z]+)_([0-9.+-]+)_([0-9]+)_([0-9]+)$", network_name)) !== nothing && return read_synthetic(p[1], parse(Float64, p[2]), parse(Int64, p[3]), parse(Int64, p[4]));
+    (p = match(r"^watts_strogatz_([a-z]+)_([0-9.+-]+)_([0-9]+)_([0-9]+)$", network_name)) !== nothing && return read_watts_strogatz(p[1], parse(Float64, p[2]), parse(Int64, p[3]), parse(Int64, p[4]));
     (p = match(r"^county_facebook_([0-9]+)_(.+)$", network_name)) !== nothing && return read_county_facebook(parse(Int, p[1]), p[2]);
     (p = match(r"^climate_([0-9]+)_(.+)$", network_name)) !== nothing && return read_climate(parse(Int, p[1]), p[2]);
     (p = match(r"^ward_([0-9]+)_(.+)$", network_name)) !== nothing && return read_ward(parse(Int, p[1]), p[2]);
