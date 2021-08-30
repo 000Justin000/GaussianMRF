@@ -318,7 +318,7 @@ function read_bitcoin_transaction()
 end
 
 function read_network(network_name)
-    (p = match(r"^synthetic_([a-z]+)_([0-9.+-]+)_([0-9]+)_([0-9]+)$", network_name)) !== nothing && return read_synthetic(p[1], parse(Float64, p[2]), parse(Int64, p[3]), parse(Int64, p[4]));
+    (p = match(r"^synthetic_([a-zA-Z]+)_([0-9.+-]+)_([0-9]+)_([0-9]+)$", network_name)) !== nothing && return read_synthetic(p[1], parse(Float64, p[2]), parse(Int64, p[3]), parse(Int64, p[4]));
     (p = match(r"^county_facebook_([0-9]+)_(.+)$", network_name)) !== nothing && return read_county_facebook(parse(Int, p[1]), p[2]);
     (p = match(r"^climate_([0-9]+)_(.+)$", network_name)) !== nothing && return read_climate(parse(Int, p[1]), p[2]);
     (p = match(r"^ward_([0-9]+)_(.+)$", network_name)) !== nothing && return read_ward(parse(Int, p[1]), p[2]);

@@ -13,6 +13,7 @@ using GraphSAGE;
 include("utils.jl");
 include("kernels.jl");
 include("read_network.jl");
+include("fit_gmrf.jl")
 
 function connected_watts_strogatz(n, k, p; num_trials=1000)
     G = watts_strogatz(n, k, p);
@@ -39,7 +40,13 @@ function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=
     elseif graph_type == "WattsStrogatz"
         G = connected_watts_strogatz(1000, 6, 0.01);
     elseif graph_type == "StochasticBlockModelSmall"
-        G = stochastic_block_model(5, 1, [20, 20, 20, 20, 20]);
+        G = stochastic_block_model(10, 1, [20, 20, 20, 20, 20]);
+    elseif graph_type == "StochasticBlockModel"
+        G = stochastic_block_model(10, 1, [200, 200, 200, 200, 200]);
+    elseif graph_type == "BarabasiAlbertSmall"
+        G = barabasi_albert(100, 10, 5);
+    elseif graph_type == "BarabasiAlbert"
+        G = barabasi_albert(1000, 100, 5);
     else
         error("unexpected option");
     end
@@ -91,3 +98,19 @@ function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=
 
     return G, ξ0, Y;
 end
+
+ξ0_0 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+0.0.json")["ξ0"];
+ξ0_1 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+1.0.json")["ξ0"];
+ξ0_2 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+2.0.json")["ξ0"];
+
+sample_synthetic("WattsStrogatz", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+sample_synthetic("WattsStrogatz", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+sample_synthetic("WattsStrogatz", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+
+sample_synthetic("StochasticBlockModel", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+sample_synthetic("StochasticBlockModel", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+sample_synthetic("StochasticBlockModel", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+
+sample_synthetic("BarabasiAlbert", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+sample_synthetic("BarabasiAlbert", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+sample_synthetic("BarabasiAlbert", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);

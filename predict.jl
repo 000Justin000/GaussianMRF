@@ -226,10 +226,9 @@ function run_dataset(G, feats, labels, ll, uu; feature_smoothing=false, predicto
     return outputs;
 end
 
-function run_transductive(G, labels, feats; compute_VI=nothing, ξ=nothing, lidx=nothing, fidx=nothing)
+function run_transductive(G, labels, feats; compute_VI=false, ξ=nothing, lidx=nothing, fidx=nothing)
     """
     Args:
-         shift: added to random initialization of correlation parameters
     compute_VI: whether to compute the mutual information between the labels and the predictors
     """
     #-----------------------------------------------------------------------------------
@@ -239,15 +238,18 @@ function run_transductive(G, labels, feats; compute_VI=nothing, ξ=nothing, lidx
     cb_skip = 100;
     cv_fold = 5;
     #-----------------------------------------------------------------------------------
-    ntrials = 10;
+    ntrials = 5;
+    # ntrials = 10;
     #-----------------------------------------------------------------------------------
     ss = collect(cb_skip:cb_skip:n_step)
     Ks = [1, 2, 3];
-    αs = [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.85, 0.90, 0.95, 0.99, 0.999];
+    αs = [0.00, 0.10, 0.30, 0.50, 0.70, 0.90, 0.95, 0.99];
+    # αs = [0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.85, 0.90, 0.95, 0.99, 0.999];
     #-----------------------------------------------------------------------------------
 
     #--------------------------------
-    for split_ratio in 0.10:0.10:0.60
+    for split_ratio in 0.30:0.10:0.30
+    # for split_ratio in 0.10:0.10:0.60
     #--------------------------------
         if compute_VI
         vi_ll    = zeros(ntrials);

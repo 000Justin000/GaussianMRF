@@ -1,14 +1,14 @@
 include("../../fit_gmrf.jl");
 include("../../predict.jl");
 
-function run_synthetic(graph_size="medium", p=5, lidx=[5], shift=0.0, sid=1, compute_VI=false)
+function run_synthetic(graph_type="WattsStrogatz", p=5, lidx=[5], shift=0.0, sid=1, compute_VI=false)
     """
     Args:
          shift: added to random initialization of correlation parameters
     compute_VI: whether to compute the mutual information between the labels and the predictors
     """
     #-----------------------------------------------------------------------------------
-    dataset = "synthetic_" * graph_size * "_" * @sprintf("%+2.1f", shift) * "_" * string(sid);
+    dataset = "synthetic_" * graph_type * "_" * @sprintf("%+2.1f", shift) * "_" * string(sid);
     G, _, labels, feats = read_network(dataset * "_" * string(lidx[1]));
     #-----------------------------------------------------------------------------------
     if compute_VI
