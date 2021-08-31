@@ -36,13 +36,13 @@ function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=
     elseif graph_type == "Ring"
         G = connected_watts_strogatz(1000, 6, 0.00);
     elseif graph_type == "WattsStrogatzSmall"
-        G = connected_watts_strogatz(100, 6, 0.05);
+        G = connected_watts_strogatz( 100, 6, 0.05);
     elseif graph_type == "WattsStrogatz"
         G = connected_watts_strogatz(1000, 6, 0.01);
     elseif graph_type == "StochasticBlockModelSmall"
-        G = stochastic_block_model(10, 1, [20, 20, 20, 20, 20]);
+        G = stochastic_block_model( 5, 0, [ 20,  20,  20,  20,  20]);
     elseif graph_type == "StochasticBlockModel"
-        G = stochastic_block_model(10, 1, [200, 200, 200, 200, 200]);
+        G = stochastic_block_model(50, 0, [200, 200, 200, 200, 200]);
     elseif graph_type == "BarabasiAlbertSmall"
         G = barabasi_albert(100, 10, 5);
     elseif graph_type == "BarabasiAlbert"
