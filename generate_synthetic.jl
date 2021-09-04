@@ -9,6 +9,7 @@ using Plots;
 using Random;
 using Distributions;
 using GraphSAGE;
+using BisectPy;
 
 include("utils.jl");
 include("kernels.jl");
@@ -28,6 +29,41 @@ function connected_watts_strogatz(n, k, p; num_trials=1000)
     return G;
 end
 
+function degree_corrected_stochastic_block_model(c, n, d)
+    K = length(n);
+    sum_n = sum(n);
+    cumsum_n = cumsum(n);
+
+    p = zeros(K,K);
+    for r in 1:K
+        for s in 1:K
+            m = ((r == s) ? div(n[r]*(n[r]-1),2) : (n[r]*n[s]));
+            p[r,s] = ((r == s) ? n[r]*c[r,s]/(2*m) : n[r]*c[r,s]/m);
+        end
+    end
+
+    blk(i) = (i <= sum_n ? bisect_left(cumsum_n, i) : error("out of range"));
+
+    P0 = [p[blk(i), blk(j)] for i in 1:sum_n, j in 1:sum_n];
+    f = sqrt(sum(d) / sum((d .* d') .* P0));
+    P = P0 .* (d .* d') * (f * f);
+
+    G = Graph(sum_n);
+    for i in 1:sum_n
+        for j in (i+1):sum_n
+            rand() < P[i,j] && add_edge!(G, i, j);
+        end
+    end
+
+    return G;
+end
+
+function degree_corrected_stochastic_block_model(cint, cext, n, d)
+    K = length(n);
+    c = [i == j ? cint : cext for i in 1:K, j in 1:K];
+    return degree_corrected_stochastic_block_model(c, n, d);
+end
+
 function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=Dict("p"=>1, "N"=>1, "ξ0"=>nothing), savedata=false)
     Random.seed!(0);
 
@@ -35,21 +71,20 @@ function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=
         G = complete_graph(2);
     elseif graph_type == "Ring"
         G = connected_watts_strogatz(1000, 6, 0.00);
-    elseif graph_type == "WattsStrogatzSmall"
-        G = connected_watts_strogatz( 100, 6, 0.05);
     elseif graph_type == "WattsStrogatz"
         G = connected_watts_strogatz(1000, 6, 0.01);
-    elseif graph_type == "StochasticBlockModelSmall"
-        G = stochastic_block_model( 5, 0, [ 20,  20,  20,  20,  20]);
     elseif graph_type == "StochasticBlockModel"
-        G = stochastic_block_model(50, 0, [200, 200, 200, 200, 200]);
-    elseif graph_type == "BarabasiAlbertSmall"
-        G = barabasi_albert(100, 10, 5);
+        G = stochastic_block_model(10.0, 0.01, repeat([100], 10));
     elseif graph_type == "BarabasiAlbert"
-        G = barabasi_albert(1000, 100, 5);
+        G = barabasi_albert(1000, 10, 5; complete=true);
+    elseif graph_type == "DegreeCorrectedStochasticBlockModel"
+        H = barabasi_albert(1000, 10, 5; complete=true);
+        G = degree_corrected_stochastic_block_model(10.0, 0.01, repeat([100], 10), degree(H)[randperm(nv(H))]);
     else
         error("unexpected option");
     end
+
+    Random.seed!(0);
 
     p, N = synthetic_dict["p"], synthetic_dict["N"];
 
@@ -99,18 +134,22 @@ function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=
     return G, ξ0, Y;
 end
 
-ξ0_0 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+0.0.json")["ξ0"];
-ξ0_1 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+1.0.json")["ξ0"];
-ξ0_2 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+2.0.json")["ξ0"];
+  ξ0_0 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+0.0.json")["ξ0"];
+  ξ0_1 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+1.0.json")["ξ0"];
+  ξ0_2 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+2.0.json")["ξ0"];
 
-sample_synthetic("WattsStrogatz", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
-sample_synthetic("WattsStrogatz", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
-sample_synthetic("WattsStrogatz", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+# sample_synthetic("WattsStrogatz", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("WattsStrogatz", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("WattsStrogatz", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
 
-sample_synthetic("StochasticBlockModel", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
-sample_synthetic("StochasticBlockModel", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
-sample_synthetic("StochasticBlockModel", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+# sample_synthetic("StochasticBlockModel", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("StochasticBlockModel", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("StochasticBlockModel", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+ 
+# sample_synthetic("DegreeCorrectedStochasticBlockModel", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("DegreeCorrectedStochasticBlockModel", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("DegreeCorrectedStochasticBlockModel", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
 
-sample_synthetic("BarabasiAlbert", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
-sample_synthetic("BarabasiAlbert", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
-sample_synthetic("BarabasiAlbert", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+# sample_synthetic("BarabasiAlbert", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("BarabasiAlbert", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("BarabasiAlbert", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
