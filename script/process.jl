@@ -52,6 +52,9 @@ end
 # fname = "transductive_synthetic_WattsStrogatzOriginal_+2.0_1"
 
 # Fix random seed to be 0 during data generation
+# fname = "transductive_synthetic_WattsStrogatzOriginal_+0.0_1"
+# fname = "transductive_synthetic_WattsStrogatzOriginal_+1.0_1"
+# fname = "transductive_synthetic_WattsStrogatzOriginal_+2.0_1"
 # fname = "transductive_synthetic_WattsStrogatz_+0.0_1"
 # fname = "transductive_synthetic_WattsStrogatz_+1.0_1"
 # fname = "transductive_synthetic_WattsStrogatz_+2.0_1"

@@ -76,10 +76,12 @@ function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=
     elseif graph_type == "StochasticBlockModel"
         G = stochastic_block_model(10.0, 0.01, repeat([100], 10));
     elseif graph_type == "BarabasiAlbert"
-        G = barabasi_albert(1000, 10, 5; complete=true);
+        G = random_regular_graph(100, 10);
+        barabasi_albert!(G, 1000, 5);
     elseif graph_type == "DegreeCorrectedStochasticBlockModel"
-        H = barabasi_albert(1000, 10, 5; complete=true);
-        G = degree_corrected_stochastic_block_model(10.0, 0.01, repeat([100], 10), degree(H)[randperm(nv(H))]);
+        G = random_regular_graph(100, 10);
+        barabasi_albert!(G, 1000, 5);
+        G = degree_corrected_stochastic_block_model(10.0, 0.01, repeat([100], 10), degree(G)[randperm(nv(G))]);
     else
         error("unexpected option");
     end
