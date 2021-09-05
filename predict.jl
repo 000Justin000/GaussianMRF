@@ -248,8 +248,8 @@ function run_transductive(G, labels, feats; compute_VI=false, ξ=nothing, lidx=n
     #-----------------------------------------------------------------------------------
 
     #--------------------------------
-    for split_ratio in 0.30:0.10:0.30
-    # for split_ratio in 0.10:0.10:0.60
+    for split_ratio in 0.3:0.1:0.3
+    # for split_ratio in 0.1:0.1:0.6
     #--------------------------------
         if compute_VI
         vi_ll    = zeros(ntrials);

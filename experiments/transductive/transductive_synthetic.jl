@@ -1,7 +1,7 @@
 include("../../fit_gmrf.jl");
 include("../../predict.jl");
 
-function run_synthetic(graph_type="WattsStrogatz", p=5, lidx=[5], shift=0.0, sid=1, compute_VI=false)
+function run_synthetic(graph_type="WattsStrogatzOriginal", p=5, lidx=[5], shift=0.0, sid=1, compute_VI=false)
     """
     Args:
          shift: added to random initialization of correlation parameters
