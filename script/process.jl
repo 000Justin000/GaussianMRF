@@ -3,7 +3,7 @@ using DataFrames;
 using Printf;
 using Statistics;
 
-function read_info(df, split_ratio, info)
+function read_transductive(df, split_ratio, info)
     return parse.(Float64, strip.(split(filter(row->(row[:Column1]==split_ratio) && (strip(row[:Column2])==info), df)[1,:Column3], ',')));
 end
 
@@ -28,19 +28,19 @@ end
 # df = CSV.read("../results/"*fname, DataFrame; datarow=1, header=0, delim=';');
 # acs = ["ac_lp", "ac_lr", "ac_lgc", "ac_sgc", "ac_gcn", "ac_lgcrp", "ac_sgcrp", "ac_gcnrp"];
 # for ac in acs
-#     @printf("%5.2f ", mean(read_info(df, 0.3, ac)));
+#     @printf("%5.2f ", mean(read_transductive(df, 0.3, ac)));
 # end
 # @printf("\n");
  
 # Kxs = ["Kx_sgc", "Kx_gcn"];
 # for Kx in Kxs
-#     @printf("%5.2f ", mean(read_info(df, 0.3, Kx)));
+#     @printf("%5.2f ", mean(read_transductive(df, 0.3, Kx)));
 # end
 # @printf("\n");
  
 # αxs = ["αx_lp", "αx_lgc", "αx_lgcrp", "αx_sgcrp", "αx_gcnrp"];
 # for αx in αxs
-#     @printf("%5.2f ", mean(read_info(df, 0.3, αx)));
+#     @printf("%5.2f ", mean(read_transductive(df, 0.3, αx)));
 # end
 # @printf("\n");
 
@@ -73,7 +73,7 @@ end
       mean_values = [];
       for i in 1:5
           df = CSV.read("../results/"*fname*"_"*string(i), DataFrame; datarow=1, header=0, delim=';')
-          append!(mean_values, read_info(df, 0.3, ac));
+          append!(mean_values, read_transductive(df, 0.3, ac));
       end
       @printf("%5.2f ", mean(mean_values));
   end
@@ -83,8 +83,8 @@ end
   for Kx in Kxs
       mean_values = [];
       for i in 1:5
-          df = CSV.read("../results/"*fname*"_"*string(i), DataFrame; datarow=4, header=0, delim=';')
-          append!(mean_values, read_info(df, 0.3, Kx));
+          df = CSV.read("../results/"*fname*"_"*string(i), DataFrame; datarow=1, header=0, delim=';')
+          append!(mean_values, read_transductive(df, 0.3, Kx));
       end
       @printf("%5.2f ", mean(mean_values));
   end
@@ -95,7 +95,7 @@ end
       mean_values = [];
       for i in 1:5
           df = CSV.read("../results/"*fname*"_"*string(i), DataFrame; datarow=4, header=0, delim=';')
-          append!(mean_values, read_info(df, 0.3, αx));
+          append!(mean_values, read_transductive(df, 0.3, αx));
       end
       @printf("%5.2f ", mean(mean_values));
   end
