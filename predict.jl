@@ -248,8 +248,8 @@ function run_transductive(G, labels, feats; compute_VI=false, ξ=nothing, lidx=n
     #-----------------------------------------------------------------------------------
 
     #--------------------------------
-    for split_ratio in 0.3:0.1:0.3
-    # for split_ratio in 0.1:0.1:0.6
+    for split_ratio in 0.30:0.10:0.30
+    # for split_ratio in 0.10:0.10:0.60
     #--------------------------------
         if compute_VI
         vi_ll    = zeros(ntrials);
@@ -465,7 +465,7 @@ function run_inductive(G, labels, feats, G_new, labels_new, feats_new)
     coeff_lgc = zeros(nf+1);
     #-------------------------
 
-    split_ratio = 0.3;
+    split_ratio = 0.30;
 
     # this function is used to recover the linear regression coefficients
     # given a learned predmap function

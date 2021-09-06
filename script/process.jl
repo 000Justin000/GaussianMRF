@@ -52,21 +52,24 @@ end
 # fname = "transductive_synthetic_WattsStrogatzOriginal_+2.0_1"
 
 # Fix random seed to be 0 during data generation
-# fname = "transductive_synthetic_WattsStrogatzOriginal_+0.0_1"
-# fname = "transductive_synthetic_WattsStrogatzOriginal_+1.0_1"
-# fname = "transductive_synthetic_WattsStrogatzOriginal_+2.0_1"
+# fname = "transductive_synthetic_Ring_+0.0_1"
+# fname = "transductive_synthetic_Ring_+1.0_1"
+# fname = "transductive_synthetic_Ring_+2.0_1"
 # fname = "transductive_synthetic_WattsStrogatz_+0.0_1"
 # fname = "transductive_synthetic_WattsStrogatz_+1.0_1"
 # fname = "transductive_synthetic_WattsStrogatz_+2.0_1"
-# fname = "transductive_synthetic_StochasticBlockModel_+0.0_1"
-# fname = "transductive_synthetic_StochasticBlockModel_+1.0_1"
-  fname = "transductive_synthetic_StochasticBlockModel_+2.0_1"
-# fname = "transductive_synthetic_DegreeCorrectedStochasticBlockModel_+0.0_1"
-# fname = "transductive_synthetic_DegreeCorrectedStochasticBlockModel_+1.0_1"
-# fname = "transductive_synthetic_DegreeCorrectedStochasticBlockModel_+2.0_1"
+# fname = "transductive_synthetic_ErdosRenyi_+0.0_1"
+# fname = "transductive_synthetic_ErdosRenyi_+1.0_1"
+# fname = "transductive_synthetic_ErdosRenyi_+2.0_1"
 # fname = "transductive_synthetic_BarabasiAlbert_+0.0_1"
 # fname = "transductive_synthetic_BarabasiAlbert_+1.0_1"
 # fname = "transductive_synthetic_BarabasiAlbert_+2.0_1"
+# fname = "transductive_synthetic_StochasticBlockModel_+0.0_1"
+# fname = "transductive_synthetic_StochasticBlockModel_+1.0_1"
+# fname = "transductive_synthetic_StochasticBlockModel_+2.0_1"
+# fname = "transductive_synthetic_DegreeCorrectedStochasticBlockModel_+0.0_1"
+# fname = "transductive_synthetic_DegreeCorrectedStochasticBlockModel_+1.0_1"
+# fname = "transductive_synthetic_DegreeCorrectedStochasticBlockModel_+2.0_1"
 
   acs = ["ac_lp", "ac_lr", "ac_lgc", "ac_sgc", "ac_gcn", "ac_lgcrp", "ac_sgcrp", "ac_gcnrp"];
   for ac in acs
