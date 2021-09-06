@@ -67,21 +67,19 @@ end
 function sample_synthetic(graph_type="WattsStrogatz", shift=0.0; synthetic_dict=Dict("p"=>1, "N"=>1, "ξ0"=>nothing), savedata=false)
     Random.seed!(0);
 
-    if graph_type == "Tiny"
-        G = complete_graph(2);
-    elseif graph_type == "Ring"
+    if graph_type == "Ring"
         G = connected_watts_strogatz(1000, 6, 0.00);
     elseif graph_type == "WattsStrogatz"
         G = connected_watts_strogatz(1000, 6, 0.01);
-    elseif graph_type == "StochasticBlockModel"
-        G = stochastic_block_model(10.0, 0.01, repeat([100], 10));
+    elseif graph_type == "ErdosRenyi"
+        G = erdos_renyi(1000, 3000);
     elseif graph_type == "BarabasiAlbert"
-        G = random_regular_graph(100, 10);
-        barabasi_albert!(G, 1000, 5);
+        G = barabasi_albert(1000, 10, 10; complete=true);
+    elseif graph_type == "StochasticBlockModel"
+        G = stochastic_block_model(20.0, 0.01, repeat([100], 10));
     elseif graph_type == "DegreeCorrectedStochasticBlockModel"
-        G = random_regular_graph(100, 10);
-        barabasi_albert!(G, 1000, 5);
-        G = degree_corrected_stochastic_block_model(10.0, 0.01, repeat([100], 10), degree(G)[randperm(nv(G))]);
+        H = barabasi_albert(1000, 10, 10; complete=true);
+        G = degree_corrected_stochastic_block_model(20.0, 0.01, repeat([100], 10), degree(H)[randperm(nv(H))]);
     else
         error("unexpected option");
     end
@@ -140,19 +138,26 @@ end
   ξ0_1 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+1.0.json")["ξ0"];
   ξ0_2 = JSON.parsefile("datasets/synthetic/WattsStrogatzOriginal/shift_+2.0.json")["ξ0"];
 
-  sample_synthetic("WattsStrogatz", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
-  sample_synthetic("WattsStrogatz", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
-  sample_synthetic("WattsStrogatz", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+# sample_synthetic("Ring", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("Ring", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("Ring", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+
+# sample_synthetic("WattsStrogatz", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("WattsStrogatz", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("WattsStrogatz", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+
+# sample_synthetic("ErdosRenyi", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("ErdosRenyi", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("ErdosRenyi", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
+
+# sample_synthetic("BarabasiAlbert", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
+# sample_synthetic("BarabasiAlbert", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
+# sample_synthetic("BarabasiAlbert", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
 
   sample_synthetic("StochasticBlockModel", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
   sample_synthetic("StochasticBlockModel", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
   sample_synthetic("StochasticBlockModel", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
- 
-  sample_synthetic("BarabasiAlbert", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
-  sample_synthetic("BarabasiAlbert", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
-  sample_synthetic("BarabasiAlbert", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
 
   sample_synthetic("DegreeCorrectedStochasticBlockModel", 0.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_0), savedata=true);
   sample_synthetic("DegreeCorrectedStochasticBlockModel", 1.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_1), savedata=true);
   sample_synthetic("DegreeCorrectedStochasticBlockModel", 2.0; synthetic_dict=Dict("p"=>5, "N"=>10, "ξ0"=>ξ0_2), savedata=true);
-
