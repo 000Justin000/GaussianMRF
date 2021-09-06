@@ -1,15 +1,635 @@
- 0.300;       ac_lr;    0.16066,    0.23286,    0.24540,    0.23278,    0.35169,    0.20117,    0.22664,    0.05171,    0.31811,    0.24500
- 0.300;      ac_sgc;    0.59269,    0.63778,    0.63297,    0.61289,    0.60537,    0.66376,    0.61528,    0.57225,    0.66336,    0.58896
- 0.300;      ac_gcn;    0.27443,    0.35082,    0.29717,    0.61650,    0.64759,    0.63222,    0.42862,    0.52497,    0.27196,    0.29497
- 0.300;       ac_lp;    0.26302,    0.26493,    0.25951,    0.31516,    0.30586,    0.31927,    0.23807,    0.42079,    0.24916,    0.24286
- 0.300;      ac_lgc;    0.72642,    0.76046,    0.78308,    0.26285,    0.44744,    0.71672,    0.76660,    0.64318,    0.83330,   -0.47626
- 0.300;    ac_lgcrp;    0.77770,    0.81391,    0.72109,    0.82019,    0.74195,    0.73116,    0.76092,    0.77456,    0.88370,    0.37233
- 0.300;    ac_sgcrp;    0.68029,    0.70657,    0.69036,    0.66945,    0.66320,    0.73114,    0.68172,    0.74763,    0.72495,    0.63529
- 0.300;    ac_gcnrp;    0.29607,    0.37492,    0.30890,    0.62989,    0.67151,    0.64348,    0.46477,    0.57764,    0.28700,    0.29758
- 0.300;      Kx_sgc;    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000
- 0.300;      Kx_gcn;    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000,    3.00000
- 0.300;       αx_lp;    0.99900,    0.99900,    0.99900,    0.99900,    0.99900,    0.99900,    0.99900,    0.99900,    0.99000,    0.99000
- 0.300;      αx_lgc;    0.99000,    0.99000,    0.95000,    0.99000,    0.99000,    0.99000,    0.99000,    0.95000,    0.99000,    0.99900
- 0.300;    αx_lgcrp;    0.99000,    0.99000,    0.99000,    0.99900,    0.99900,    0.99000,    0.99000,    0.95000,    0.99000,    0.99900
- 0.300;    αx_sgcrp;    0.99000,    0.99000,    0.99000,    0.99000,    0.99000,    0.99000,    0.95000,    0.99900,    0.99000,    0.95000
- 0.300;    αx_gcnrp;    0.95000,    0.95000,    0.90000,    0.99000,    0.95000,    0.95000,    0.90000,    0.95000,    0.90000,    0.50000
+
+signal (15): Terminated
+in expression starting at none:1
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+pthread_cond_wait at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+uv_cond_wait at /workspace/srcdir/libuv/src/unix/thread.c:827
+jl_task_get_next at /buildworker/worker/package_linux64/build/src/partr.c:509
+poptask at ./task.jl:704
+wait at ./task.jl:712 [inlined]
+task_done_hook at ./task.jl:442
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+jl_finish_task at /buildworker/worker/package_linux64/build/src/task.c:196
+jl_threadfun at /buildworker/worker/package_linux64/build/src/partr.c:265
+start_thread at /lib/x86_64-linux-gnu/libpthread.so.0 (unknown line)
+clone at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: (nil))
+jl_lookup_generic_ at /buildworker/worker/package_linux64/build/src/gf.c:2294 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2394
+∇broadcast at /home/jj585/.julia/packages/Tracker/5UKyd/src/lib/array.jl:552 [inlined]
+copy at /home/jj585/.julia/packages/Tracker/5UKyd/src/lib/array.jl:582
+materialize at ./broadcast.jl:837 [inlined]
+#559 at /home/jj585/.julia/packages/Tracker/5UKyd/src/lib/array.jl:555
+ntuple at ./ntuple.jl:42 [inlined]
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/lib/array.jl:555
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:35
+unknown function (ip: 0x7fe95b14b17f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961539296)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+foreach at ./abstractarray.jl:2010
+unknown function (ip: 0x7fe95b1675c3)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe95b166adf)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe95b1603cf)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe95b15f41f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961539296)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+foreach at ./abstractarray.jl:2010
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe95b15e78f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961539296)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+foreach at ./abstractarray.jl:2010
+unknown function (ip: 0x7fe95b13b603)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe95b14b17f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961539296)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+foreach at ./abstractarray.jl:2010
+unknown function (ip: 0x7fe95b137fa3)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe95b13685d)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe96153872f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961533b76)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+foreach at ./abstractarray.jl:2010
+unknown function (ip: 0x7fe961537693)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961534e9f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe961533b76)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+foreach at ./abstractarray.jl:2010
+unknown function (ip: 0x7fe961533b13)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe96152e82f)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe96152ce10)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe96152bab0)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe96152b4f0)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#13 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38 [inlined]
+foreach at ./abstractarray.jl:2010 [inlined]
+back_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:38
+unknown function (ip: 0x7fe96152b4f0)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+back at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:58
+#back!#15 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:77 [inlined]
+back!##kw at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:75 [inlined]
+#back!#32 at /home/jj585/.julia/packages/Tracker/5UKyd/src/lib/real.jl:16 [inlined]
+back! at /home/jj585/.julia/packages/Tracker/5UKyd/src/lib/real.jl:14
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+gradient_ at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:4
+unknown function (ip: 0x7fe9615205a7)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#gradient#24 at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:164
+unknown function (ip: 0x7fe96151f41a)
+gradient at /home/jj585/.julia/packages/Tracker/5UKyd/src/back.jl:164 [inlined]
+#train!#230 at /home/jj585/Projects/GaussianMRF/utils.jl:134
+train!##kw at /home/jj585/Projects/GaussianMRF/utils.jl:128
+unknown function (ip: 0x7fe96151e8b5)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#run_dataset#345 at /home/jj585/Projects/GaussianMRF/predict.jl:213
+run_dataset##kw at /home/jj585/Projects/GaussianMRF/predict.jl:84
+unknown function (ip: 0x7fe95b1b64a9)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+#run_transductive#377 at /home/jj585/Projects/GaussianMRF/predict.jl:355
+run_transductive##kw at /home/jj585/Projects/GaussianMRF/predict.jl:230
+unknown function (ip: 0x7fe9614fff21)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+run_synthetic at /home/jj585/Projects/GaussianMRF/experiments/transductive/transductive_synthetic.jl:27
+unknown function (ip: 0x7fe9614e0865)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1690 [inlined]
+do_call at /buildworker/worker/package_linux64/build/src/interpreter.c:117
+eval_value at /buildworker/worker/package_linux64/build/src/interpreter.c:206
+eval_stmt_value at /buildworker/worker/package_linux64/build/src/interpreter.c:157 [inlined]
+eval_body at /buildworker/worker/package_linux64/build/src/interpreter.c:566
+jl_interpret_toplevel_thunk at /buildworker/worker/package_linux64/build/src/interpreter.c:660
+jl_toplevel_eval_flex at /buildworker/worker/package_linux64/build/src/toplevel.c:840
+jl_toplevel_eval_flex at /buildworker/worker/package_linux64/build/src/toplevel.c:790
+jl_toplevel_eval_flex at /buildworker/worker/package_linux64/build/src/toplevel.c:790
+jl_toplevel_eval_in at /buildworker/worker/package_linux64/build/src/toplevel.c:883
+eval at ./boot.jl:331
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+eval_user_input at ./client.jl:124
+unknown function (ip: 0x7fea541fda9d)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2231 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+run_main_repl at ./client.jl:428
+exec_options at ./client.jl:313
+_start at ./client.jl:506
+jfptr__start_53898.clone_1 at /home/jj585/Softwares/julia/julia-1.5.3/lib/julia/sys.so (unknown line)
+_jl_invoke at /buildworker/worker/package_linux64/build/src/gf.c:2214 [inlined]
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2398
+unknown function (ip: 0x401931)
+unknown function (ip: 0x401533)
+__libc_start_main at /lib/x86_64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4015d4)
+unknown function (ip: (nil))
+Allocations: 114540855428 (Pool: 114258301651; Big: 282553777); GC: 70570

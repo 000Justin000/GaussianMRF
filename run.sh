@@ -1,20 +1,36 @@
 # transductive learning experiments
 
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_1      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_2      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [3], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_3      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [4], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_4      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [5], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_5      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [1], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_1      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [2], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_2      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [3], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_3      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [4], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_4      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [5], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_5      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [1], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_1      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [2], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_2      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_3      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_4      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_5      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_1      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_2      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [3], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_3      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [4], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_4      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [5], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+0.0_1_5      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [1], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_1      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [2], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_2      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [3], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_3      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [4], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_4      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [5], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+1.0_1_5      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [1], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_1      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [2], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_2      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_3      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_4      &
+# echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatzOriginal", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatzOriginal_+2.0_1_5      &
+                                                                      
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+0.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+0.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [3], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+0.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [4], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+0.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [5], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+0.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [1], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+1.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [2], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+1.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [3], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+1.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [4], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+1.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [5], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+1.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [1], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+2.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [2], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+2.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+2.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+2.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("Ring", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_Ring_+2.0_1_5      &
                                                                       
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatz", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatz_+0.0_1_1      &
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatz", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatz_+0.0_1_2      &
@@ -32,21 +48,21 @@
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatz", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatz_+2.0_1_4      &
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("WattsStrogatz", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_WattsStrogatz_+2.0_1_5      &
                                                                       
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_1      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_2      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [3], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_3      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [4], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_4      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [5], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_5      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [1], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_1      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [2], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_2      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [3], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_3      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [4], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_4      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [5], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_5      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [1], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_1      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [2], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_2      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_3      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_4      &
-  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+0.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+0.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [3], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+0.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [4], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+0.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [5], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+0.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [1], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+1.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [2], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+1.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [3], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+1.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [4], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+1.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [5], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+1.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [1], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+2.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [2], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+2.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+2.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+2.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("ErdosRenyi", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_ErdosRenyi_+2.0_1_5      &
                                                                       
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("BarabasiAlbert", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_BarabasiAlbert_+0.0_1_1      &
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("BarabasiAlbert", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_BarabasiAlbert_+0.0_1_2      &
@@ -63,6 +79,22 @@
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("BarabasiAlbert", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_BarabasiAlbert_+2.0_1_3      &
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("BarabasiAlbert", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_BarabasiAlbert_+2.0_1_4      &
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("BarabasiAlbert", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_BarabasiAlbert_+2.0_1_5      &
+                                                                      
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [3], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [4], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [5], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+0.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [1], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [2], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [3], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [4], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [5], +1.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+1.0_1_5      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [1], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_1      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [2], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_2      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [3], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_3      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [4], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_4      &
+  echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("StochasticBlockModel", 5, [5], +2.0, 1, false);'                        | julia >& results/transductive_synthetic_StochasticBlockModel_+2.0_1_5      &
                                                                       
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("DegreeCorrectedStochasticBlockModel", 5, [1], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_DegreeCorrectedStochasticBlockModel_+0.0_1_1      &
   echo 'include("experiments/transductive/transductive_synthetic.jl"); run_synthetic("DegreeCorrectedStochasticBlockModel", 5, [2], +0.0, 1, false);'                        | julia >& results/transductive_synthetic_DegreeCorrectedStochasticBlockModel_+0.0_1_2      &
@@ -102,23 +134,41 @@
 
 # inductive learning experiments
 
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [1], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_1       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [2], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_2       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [3], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_3       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [4], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_4       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [5], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_5       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [1], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_1       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [2], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_2       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [3], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_3       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [4], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_4       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [5], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+0.0_2_1_5       &
 
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [1], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_1       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [2], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_2       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [3], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_3       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [4], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_4       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [5], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_5       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [1], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_1       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [2], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_2       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [3], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_3       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [4], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_4       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [5], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+1.0_2_1_5       &
 
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [1], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_1       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [2], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_2       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [3], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_3       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [4], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_4       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [5], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_5       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [1], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_1       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [2], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_2       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [3], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_3       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [4], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_4       &
+# echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatzOriginal", [5], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatzOriginal_+2.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [1], 0.0);'                                  | julia >& results/inductive_synthetic_Ring_+0.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [2], 0.0);'                                  | julia >& results/inductive_synthetic_Ring_+0.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [3], 0.0);'                                  | julia >& results/inductive_synthetic_Ring_+0.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [4], 0.0);'                                  | julia >& results/inductive_synthetic_Ring_+0.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [5], 0.0);'                                  | julia >& results/inductive_synthetic_Ring_+0.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [1], 1.0);'                                  | julia >& results/inductive_synthetic_Ring_+1.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [2], 1.0);'                                  | julia >& results/inductive_synthetic_Ring_+1.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [3], 1.0);'                                  | julia >& results/inductive_synthetic_Ring_+1.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [4], 1.0);'                                  | julia >& results/inductive_synthetic_Ring_+1.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [5], 1.0);'                                  | julia >& results/inductive_synthetic_Ring_+1.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [1], 2.0);'                                  | julia >& results/inductive_synthetic_Ring_+2.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [2], 2.0);'                                  | julia >& results/inductive_synthetic_Ring_+2.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [3], 2.0);'                                  | julia >& results/inductive_synthetic_Ring_+2.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [4], 2.0);'                                  | julia >& results/inductive_synthetic_Ring_+2.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "Ring", [5], 2.0);'                                  | julia >& results/inductive_synthetic_Ring_+2.0_2_1_5       &
 
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [1], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_1       &
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [2], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_2       &
@@ -138,23 +188,41 @@
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [4], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_4       &
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [5], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_5       &
 
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [1], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_1       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [2], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_2       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [3], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_3       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [4], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_4       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [5], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_5       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [1], 0.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+0.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [2], 0.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+0.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [3], 0.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+0.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [4], 0.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+0.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [5], 0.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+0.0_2_1_5       &
 
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [1], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_1       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [2], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_2       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [3], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_3       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [4], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_4       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [5], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_5       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [1], 1.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+1.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [2], 1.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+1.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [3], 1.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+1.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [4], 1.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+1.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [5], 1.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+1.0_2_1_5       &
 
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [1], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_1       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [2], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_2       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [3], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_3       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [4], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_4       &
-  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [5], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_5       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [1], 2.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+2.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [2], 2.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+2.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [3], 2.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+2.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [4], 2.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+2.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "ErdosRenyi", [5], 2.0);'                                  | julia >& results/inductive_synthetic_ErdosRenyi_+2.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [1], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [2], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [3], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [4], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [5], 0.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+0.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [1], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+1.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [2], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+1.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [3], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+1.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [4], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+1.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [5], 1.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+1.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [1], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [2], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [3], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [4], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "WattsStrogatz", [5], 2.0);'                                  | julia >& results/inductive_synthetic_WattsStrogatz_+2.0_2_1_5       &
 
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "BarabasiAlbert", [1], 0.0);'                                  | julia >& results/inductive_synthetic_BarabasiAlbert_+0.0_2_1_1       &
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "BarabasiAlbert", [2], 0.0);'                                  | julia >& results/inductive_synthetic_BarabasiAlbert_+0.0_2_1_2       &
@@ -173,6 +241,24 @@
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "BarabasiAlbert", [3], 2.0);'                                  | julia >& results/inductive_synthetic_BarabasiAlbert_+2.0_2_1_3       &
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "BarabasiAlbert", [4], 2.0);'                                  | julia >& results/inductive_synthetic_BarabasiAlbert_+2.0_2_1_4       &
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "BarabasiAlbert", [5], 2.0);'                                  | julia >& results/inductive_synthetic_BarabasiAlbert_+2.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [1], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [2], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [3], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [4], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [5], 0.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+0.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [1], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [2], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [3], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [4], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [5], 1.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+1.0_2_1_5       &
+
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [1], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_1       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [2], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_2       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [3], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_3       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [4], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_4       &
+  echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "StochasticBlockModel", [5], 2.0);'                                  | julia >& results/inductive_synthetic_StochasticBlockModel_+2.0_2_1_5       &
 
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "DegreeCorrectedStochasticBlockModel", [1], 0.0);'                                  | julia >& results/inductive_synthetic_DegreeCorrectedStochasticBlockModel_+0.0_2_1_1       &
   echo 'include("experiments/inductive/inductive_synthetic.jl"); run_synthetic(2, 1, "DegreeCorrectedStochasticBlockModel", [2], 0.0);'                                  | julia >& results/inductive_synthetic_DegreeCorrectedStochasticBlockModel_+0.0_2_1_2       &
